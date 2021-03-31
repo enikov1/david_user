@@ -218,7 +218,7 @@ $('.PhoneInputCountrySelect').change(function() {
 		}
 	}
 
-	$('.phone-input-image img').attr('src', '../img/_flag/'+ flag_select +'.svg');
+	$('.phone-input-image img').attr('src', './img/_flag/'+ flag_select +'.svg');
 
 	$('.phoneFieldNumber').val("+" + getCode);
 
