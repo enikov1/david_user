@@ -87,10 +87,10 @@ $(function () {
 
 	
 
-	function loadSearchResult() {
-		let search_width = $('.search').width(),
-			search_left = $('.form-search-input').offset().left,
-			search_top = $('.form-search-input').offset().top + 53;
+	function loadSearchResult(elem) {
+		let search_width = elem.closest('.search').width(),
+			search_left = elem.offset().left,
+			search_top = elem.offset().top + 53;
 		
 		$('#autosuggest-1').css({
 			'position': 'absolute',
@@ -108,7 +108,7 @@ $(function () {
 	});
 
 	$('.form-search-input').on('input', function() {
-		loadSearchResult();
+		loadSearchResult($(this));
 	});
 
 		

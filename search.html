@@ -244,7 +244,7 @@
 				</div>
 			</div>
 			<div class="w-full mx-2 md:hidden">
-				<form class="relative w-full z-10">
+				<form class="search relative w-full z-10">
 					<div class="relative">
 						<input class="form-search-input topbar-input" type="text" placeholder="e.g: Alicante, Majorca, Malaga">
 					</div>
@@ -555,14 +555,14 @@
 
 	<main class="sm:mb-20">
 
-		<div class="hidden smd:block bg-white border-gray-300 border-b min-h-15">
+		<div class="hidden md:block bg-white border-gray-300 border-b min-h-15">
 			<div class="sticky-block">
 				<div class="bg-white">
 					<div class="container-fluid--max-width mx-auto px-4 md:px-6">
 						<div class="container-fluid--max-width mx-auto">
 							<div id="search-default" class="flex items-stretch -mx-2">
 								<div class="p-2 pl-0 w-5/12">
-									<form class="flex w-full">
+									<form class="search flex w-full">
 										<div class="relative w-full z-4 mr-2">
 											<div class="relative">
 												<input type="text" class="form-search-input" placeholder="e.g: Alicante, Majorca, Malaga" maxlength="80">
@@ -2333,6 +2333,8 @@
 						</button>
 					</div>
 					<div class="overflow-y-scroll px-4 py-3">
+						<button id="active-refence-search-sm" class="hover-underline text-primary block mt-2 mb-3"><span>Search by property
+								reference</span></button>
 						<div class="mb-8">
 							<div class="flex items-center mb-4">
 								<svg width="26" height="22" fill="none">
@@ -2641,7 +2643,9 @@
 							</div>
 						</div>
 						<a class="hover-underline text-primary" href="#">View properties to rent</a>
-						<button id="active-refence-search-sm" class="hover-underline text-primary block mt-2"><span>Search by property reference</span></button>
+					</div>
+					<div class="px-4 py-2 border-t border-wafer mt-auto">
+						<button type="button" class="btn btn-blue w-full">Search properties</button>
 					</div>
 				</div>
 				
@@ -2713,6 +2717,181 @@
 				
 			</div>
 		</div>
+	</div>
+
+	<div id="autosuggest-1" class="autosuggest-container autosuggest-container">
+		<ul>
+			<li class="autosuggest-item autosuggest-item">
+				<div class="flex py-2 px-4">
+					<span class="autosuggest-flag">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 85.333 512 341.333">
+							<rect y="85.331" fill="#FFDA44" width="512" height="341.337" />
+							<g>
+								<rect y="85.331" fill="#D80027" width="512" height="113.775" />
+								<rect y="312.882" fill="#D80027" width="512" height="113.775" />
+							</g>
+						</svg>
+					</span>
+					<div class="leading-tight">
+						<span class="font-normal">Madrid</span>
+						<span class="block text-gray-400">Madrid province</span>
+					</div>
+				</div>
+			</li>
+			<li class="autosuggest-item autosuggest-item">
+				<div class="flex py-2 px-4">
+					<span class="autosuggest-flag">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 85.333 512 341.333">
+							<rect y="85.331" fill="#FFDA44" width="512" height="341.337" />
+							<g>
+								<rect y="85.331" fill="#D80027" width="512" height="113.775" />
+								<rect y="312.882" fill="#D80027" width="512" height="113.775" />
+							</g>
+						</svg>
+					</span>
+					<div class="leading-tight">
+						<span class="font-normal">Madrid</span>
+						<span class="block text-gray-400">Madrid province</span>
+					</div>
+				</div>
+			</li>
+			<li class="autosuggest-item autosuggest-item">
+				<div class="flex py-2 px-4">
+					<span class="autosuggest-flag">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 85.333 512 341.333">
+							<rect y="85.331" fill="#FFDA44" width="512" height="341.337" />
+							<g>
+								<rect y="85.331" fill="#D80027" width="512" height="113.775" />
+								<rect y="312.882" fill="#D80027" width="512" height="113.775" />
+							</g>
+						</svg>
+					</span>
+					<div class="leading-tight">
+						<span class="font-normal">Madrid</span>
+						<span class="block text-gray-400">Madrid province</span>
+					</div>
+				</div>
+			</li>
+			<li class="autosuggest-item autosuggest-item">
+				<div class="flex py-2 px-4">
+					<span class="autosuggest-flag">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 85.333 512 341.333">
+							<rect y="85.331" fill="#FFDA44" width="512" height="341.337" />
+							<g>
+								<rect y="85.331" fill="#D80027" width="512" height="113.775" />
+								<rect y="312.882" fill="#D80027" width="512" height="113.775" />
+							</g>
+						</svg>
+					</span>
+					<div class="leading-tight">
+						<span class="font-normal">Madrid</span>
+						<span class="block text-gray-400">Madrid province</span>
+					</div>
+				</div>
+			</li>
+			<li class="autosuggest-item autosuggest-item">
+				<div class="flex py-2 px-4">
+					<span class="autosuggest-flag">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 85.333 512 341.333">
+							<rect y="85.331" fill="#FFDA44" width="512" height="341.337" />
+							<g>
+								<rect y="85.331" fill="#D80027" width="512" height="113.775" />
+								<rect y="312.882" fill="#D80027" width="512" height="113.775" />
+							</g>
+						</svg>
+					</span>
+					<div class="leading-tight">
+						<span class="font-normal">Madrid</span>
+						<span class="block text-gray-400">Madrid province</span>
+					</div>
+				</div>
+			</li>
+			<li class="autosuggest-item autosuggest-item">
+				<div class="flex py-2 px-4">
+					<span class="autosuggest-flag">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 85.333 512 341.333">
+							<rect y="85.331" fill="#FFDA44" width="512" height="341.337" />
+							<g>
+								<rect y="85.331" fill="#D80027" width="512" height="113.775" />
+								<rect y="312.882" fill="#D80027" width="512" height="113.775" />
+							</g>
+						</svg>
+					</span>
+					<div class="leading-tight">
+						<span class="font-normal">Madrid</span>
+						<span class="block text-gray-400">Madrid province</span>
+					</div>
+				</div>
+			</li>
+			<li class="autosuggest-item autosuggest-item">
+				<div class="flex py-2 px-4">
+					<span class="autosuggest-flag">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 85.333 512 341.333">
+							<rect y="85.331" fill="#FFDA44" width="512" height="341.337" />
+							<g>
+								<rect y="85.331" fill="#D80027" width="512" height="113.775" />
+								<rect y="312.882" fill="#D80027" width="512" height="113.775" />
+							</g>
+						</svg>
+					</span>
+					<div class="leading-tight">
+						<span class="font-normal">Madrid</span>
+						<span class="block text-gray-400">Madrid province</span>
+					</div>
+				</div>
+			</li>
+			<li class="autosuggest-item autosuggest-item">
+				<div class="flex py-2 px-4">
+					<span class="autosuggest-flag">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 85.333 512 341.333">
+							<rect y="85.331" fill="#FFDA44" width="512" height="341.337" />
+							<g>
+								<rect y="85.331" fill="#D80027" width="512" height="113.775" />
+								<rect y="312.882" fill="#D80027" width="512" height="113.775" />
+							</g>
+						</svg>
+					</span>
+					<div class="leading-tight">
+						<span class="font-normal">Madrid</span>
+						<span class="block text-gray-400">Madrid province</span>
+					</div>
+				</div>
+			</li>
+			<li class="autosuggest-item autosuggest-item">
+				<div class="flex py-2 px-4">
+					<span class="autosuggest-flag">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 85.333 512 341.333">
+							<rect y="85.331" fill="#FFDA44" width="512" height="341.337" />
+							<g>
+								<rect y="85.331" fill="#D80027" width="512" height="113.775" />
+								<rect y="312.882" fill="#D80027" width="512" height="113.775" />
+							</g>
+						</svg>
+					</span>
+					<div class="leading-tight">
+						<span class="font-normal">Madrid</span>
+						<span class="block text-gray-400">Madrid province</span>
+					</div>
+				</div>
+			</li>
+			<li class="autosuggest-item autosuggest-item">
+				<div class="flex py-2 px-4">
+					<span class="autosuggest-flag">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 85.333 512 341.333">
+							<rect y="85.331" fill="#FFDA44" width="512" height="341.337" />
+							<g>
+								<rect y="85.331" fill="#D80027" width="512" height="113.775" />
+								<rect y="312.882" fill="#D80027" width="512" height="113.775" />
+							</g>
+						</svg>
+					</span>
+					<div class="leading-tight">
+						<span class="font-normal">Madrid</span>
+						<span class="block text-gray-400">Madrid province</span>
+					</div>
+				</div>
+			</li>
+		</ul>
 	</div>
 
 	<!-- support styles -->
