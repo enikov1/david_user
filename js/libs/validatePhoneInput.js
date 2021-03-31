@@ -208,11 +208,13 @@ let country_calling_codes = [
 	{ code: 998, name: ["UZ"] },
 ];
 
-$('.PhoneInputCountrySelect').change(function() {
+let selected_filed = $('.PhoneInputCountrySelect');
+
+selected_filed.change(function() {
 	let _this = $(this),
 		flag_select = _this.val();
 
-	for(var i = 0; i < country_calling_codes.length; i++) {
+	for(let i = 0; i < country_calling_codes.length; i++) {
 		if(country_calling_codes[i].name.includes(flag_select)) {
 			var getCode = country_calling_codes[i].code;
 			break;
@@ -225,3 +227,14 @@ $('.PhoneInputCountrySelect').change(function() {
 
 	
 });
+
+for(let i = 0; i < country_calling_codes.length; i++) {
+	if(country_calling_codes[i].name.includes(selected_filed.val())) {
+		var getCode = country_calling_codes[i].code;
+		break;
+	}
+}
+
+$('.phone-input-image img').attr('src', './img/_flag/'+ selected_filed.val() +'.svg');
+
+$('.phoneFieldNumber').val("+" + getCode);
