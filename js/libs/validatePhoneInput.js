@@ -13,6 +13,7 @@ let country_calling_codes = [
 	{ code: 40, name: ["RO"] },
 	{ code: 41, name: ["CH"] },
 	{ code: 43, name: ["AT"] },
+	{ code: 44, name: ["ZZ"] },
 	{ code: 44, name: ["GB", "GG", "IM", "JE"] },
 	{ code: 45, name: ["DK"] },
 	{ code: 46, name: ["SE"] },
