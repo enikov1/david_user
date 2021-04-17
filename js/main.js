@@ -109,6 +109,12 @@ $(function () {
 
 	$('.form-search-input').on('input', function() {
 		loadSearchResult($(this));
+
+		if($(this).val().length >= 1) {
+			$(this).closest('.search').find('.form-reset').removeClass('opacity-0');
+		} else {
+			$(this).closest('.search').find('.form-reset').addClass('opacity-0');
+		}
 	});
 
 		

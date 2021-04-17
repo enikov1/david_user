@@ -239,7 +239,7 @@ header.sticky {
 
 	.sticky-block.active {
 		position: fixed;
-		top: 48px;
+		top: 0;
 		width: 100%;
 		z-index: 20;
 	}
