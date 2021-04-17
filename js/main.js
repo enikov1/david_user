@@ -608,5 +608,27 @@ $(function () {
         }
     });
 	
+
+	// new Tippy(document.querySelector('.tippy-show'))
+
+	// tippy($('.tippy-show'));
+
+	$('.tippy-show').each(function() {
+		tippy(document.querySelectorAll('.tippy-show'));
+	});
+
+	$('.textarea-form').each(function() {
+		if($(this).attr('data-expand-textarea', false)) {
+			$(this).hide();
+		}
+	});
+
+	$('[data-target-textarea]').on('click', function() {
+		let _this = $(this);
+		let _id = _this.attr('data-target-textarea');
+		let _target = $(_id);
+
+		(_this.is(':checked')) ? _target.show() : _target.hide();
+	});
 	
 });
