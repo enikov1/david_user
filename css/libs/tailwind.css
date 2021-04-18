@@ -83,6 +83,12 @@ button {
 	font: inherit
 }
 
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
 figure,
 h1,
 h2,
@@ -1482,6 +1488,10 @@ img {
 }
 
 @media (min-width:991px) {
+	
+	.md\:max-w-56 {
+		max-width: 14rem;
+	}
 	.md\:min-h-96 {
 		min-height: 24rem
 	}
@@ -1637,6 +1647,10 @@ img {
 
 	.md\:mt-0 {
 		margin-top: 0
+	}
+
+	.md\:text-2xl {
+		font-size: 1.5rem;
 	}
 
 	.md\:mb-0 {
