@@ -15,16 +15,46 @@ $(function () {
 
 	// Показываем полное описаине на странице объекта
 
-	$('#show-info').on('click', function() {
+	// $('#show-info').on('click', function() {
 
-		let _self = $(this),
-			textButton = _self.find('span');
+	// 	let _self = $(this),
+	// 		textButton = _self.find('span');
 
-		_self.toggleClass('expanded');
+	// 	_self.toggleClass('expanded');
 
-		$('.article-content-text').toggleClass('active');
+	// 	$('.article-content-text').toggleClass('active');
 
-		(_self.hasClass('expanded')) ? textButton.text('Show less') : textButton.text('Show more');
+	// 	(_self.hasClass('expanded')) ? textButton.text('Show less') : textButton.text('Show more');
+	// });
+
+
+	let ellipsesText = "...";
+	let expandText = "Show more";
+	let collapseText = "Show less";
+	$('.expandable-text').each(function() {
+		let content = $(this).html();
+		let collapseLimit = $(this).data('collapse-limit');
+		if(content.length > collapseLimit) {
+		let collapsedContent = content.substr(0, collapseLimit);
+		let expandedContent = content.substr(collapseLimit-1, content.length - collapseLimit);
+			$(this).empty();
+			$(this).append($('<p />').addClass('collapsed-content').html(collapsedContent + '<span class="ellipses">...</span>'));
+			// $(this).append($('<span />').addClass('ellipses').html(ellipsesText));
+			$(this).append($('<p />').addClass('expanded-content').html(expandedContent));
+			// $(this).append($('<button />').addClass('trigger').html(expandText));
+		}
+	});
+
+	$(".article-content-trigger").on('click', function(){
+		if($('.expanded-content').is(":visible")) {
+			$(this).removeClass('expanded');
+			$(this).find('span').text(expandText);
+		} else {
+			$(this).addClass('expanded');
+			$(this).find('span').text(collapseText);
+		}
+		$(this).siblings('.expandable-text').find('.ellipses').toggle();
+		$(this).siblings('.expandable-text').find('.expanded-content').toggle();
 	});
 
 	// 
@@ -481,11 +511,24 @@ $(function () {
 
 	// validate
 
-	
+	let form_validate = $('#form_validate_1,#form_validate_2,#form_validate_3,#form_validate_4');
 
-	$('#form_validate_1,#form_validate_2,#form_validate_3,#form_validate_4').submit(function(e) {
+	form_validate.submit(function(e) {
 		e.preventDefault();
-		
+	});
+
+	form_validate.each(function() {
+		let _this = $(this);
+
+		_this.find('[data-checked="more_details"]').on('change', function() {
+			if(!$(this).is(':checked')) {
+				_this.find('[data-toggle="more_details"]').removeClass('hidden');
+				_this.find('button[type="submit"]').attr('disabled', true);
+			} else {
+				_this.find('[data-toggle="more_details"]').addClass('hidden');
+				_this.find('button[type="submit"]').attr('disabled', false);
+			}
+		});
 	});
 	
 	$('#form_validate_1').validate({
@@ -518,6 +561,7 @@ $(function () {
 	});
 
 	$('#form_validate_2').validate({
+		ignore: [],
 		rules: {
 			name: {
 				required: true,
@@ -529,16 +573,22 @@ $(function () {
 			},
 			tel: {
 				required: true
+			},
+			checkbox3: {
+				required: true,
+				// maxlength: 0
 			}
 		},
 		messages: {
 			name: "Please enter your name",
 			email: "Please provide a valid email address",
 			tel: "Please enter valid phone number"
+			// checkbox3: ""
 		},
 		highlight: function(element, errorClass, validClass) {
 			$(element).prev('label').addClass('error');
 			$(element).parent().closest('.telField').addClass('error');
+			console.log(element);
 		},
 		unhighlight: function(element, errorClass, validClass) {
 			$(element).prev('label').removeClass('error');
@@ -608,10 +658,7 @@ $(function () {
         }
     });
 	
-
-	// new Tippy(document.querySelector('.tippy-show'))
-
-	// tippy($('.tippy-show'));
+	// tippy
 
 	$('.tippy-show').each(function() {
 		tippy(document.querySelectorAll('.tippy-show'));
@@ -630,5 +677,26 @@ $(function () {
 
 		(_this.is(':checked')) ? _target.show() : _target.hide();
 	});
-	
+
+	// modal_button
+
+	$('.media-preview-close').on('click', function() {
+		$('.media-preview-overlay').removeClass('active');
+	});
+
+	$('[data-component="video_preview"]').on('click', function() {
+		$('[data-modal="video_preview"]').addClass('active');
+	});
+	$('[data-component="virtual_tour"]').on('click', function() {
+		$('[data-modal="virtual_tour"]').addClass('active');
+	});
+
+	// accordion
+
+	$('.accordion-trigger').on('click', function() {
+		let _this = $(this),
+			_parent = _this.parent();
+		_parent.toggleClass('accordion-open accordion-hide');
+		
+	});
 });
