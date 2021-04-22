@@ -1487,8 +1487,8 @@ img {
 	min-height: 24rem !important
 }
 
-.max-h-96 {
-	max-height: 24rem !important
+.max-h-146 {
+	max-height: 32rem !important
 }
 
 @media (min-width:991px) {
