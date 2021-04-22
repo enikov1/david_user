@@ -13,6 +13,95 @@ $(function () {
 
 	// 
 
+	// Слайдер
+
+	function glidePage(event) {
+		let countSliderMax = event.slick("getSlick").slideCount,
+			countSliderActiveNum = event.slick('slickCurrentSlide') + 1,
+			countSliderText = countSliderActiveNum + ' of ' + countSliderMax;
+
+		$('[data-slider-pageCount]').attr('data-slider-pageCount', countSliderText);
+		$('[data-slider-pageCount]').html(countSliderText);
+	}
+
+	let carousel_image = $('.carousel-items');
+
+	if(carousel_image) {
+		carousel_image.slick({
+			// infinite: false,
+			accessibility: false,
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			arrows: true,
+			appendArrows: carousel_image.parent(),
+			prevArrow: '<div class="absolute h-full top-0 left-3"><button data-slider-prev="true" class="absolute z-10 at-center-y left-0 ml-1 w-12 h-12 bg-white shadow border-gray-200 border-2 rounded-full text-center" type="button"><img class="relative -top-px w-3 inline-block" src="./img/svg/icon-left-arrow-black.svg" width="12" height="20"></button></div>',
+			nextArrow: '<div class="absolute h-full top-0 right-16"><button data-slider-next="true" class="absolute z-10 at-center-y left-0 ml-1 w-12 h-12 bg-white shadow border-gray-200 border-2 rounded-full text-center" type="button"><img class="relative -top-px w-3 inline-block" src="./img/svg/icon-right-arrow.svg" width="12" height="20"></button></div>',
+		});
+
+		glidePage(carousel_image);
+
+		$('[data-slider-prev]').on('click', function() {
+			carousel_image.slick('slickPrev');
+			glidePage(carousel_image);
+		});
+
+		$('[data-slider-next]').on('click', function() {
+			carousel_image.slick('slickNext');
+			glidePage(carousel_image);
+		});
+
+		$('[data-slider-active]').on('click', function() {
+			$('.carousel-items .carousel-slide').eq(carousel_image.slick('slickCurrentSlide') + 1).find('img').click();
+		});
+	}
+
+	let carousel_card = $('#carousel-card');
+
+	if(carousel_card) {
+		carousel_card.slick({
+			// infinite: false,
+			accessibility: false,
+			slidesToShow: 4,
+			slidesToScroll: 1,
+			swipeToSlide: true,
+			appendArrows: carousel_card.parent(),
+			prevArrow: '<div class="absolute h-full top-0 left-3"><button data-card-prev="true" class="absolute z-10 at-center-y left-0 ml-1 w-12 h-12 bg-white shadow border-gray-200 border-2 rounded-full text-center" type="button"><img class="relative -top-px w-3 inline-block" src="./img/svg/icon-left-arrow-black.svg" width="12" height="20"></button></div>',
+			nextArrow: '<div class="absolute h-full top-0 right-16"><button data-card-next="true" class="absolute z-10 at-center-y left-0 ml-1 w-12 h-12 bg-white shadow border-gray-200 border-2 rounded-full text-center" type="button"><img class="relative -top-px w-3 inline-block" src="./img/svg/icon-right-arrow.svg" width="12" height="20"></button></div>',
+			responsive: [
+				{
+					breakpoint: 768,
+					settings: {
+						slidesToShow: 2,
+						slidesToScroll: 1,
+					}
+				},
+				{
+					breakpoint: 480,
+					settings: {
+						slidesToShow: 1,
+						slidesToScroll: 1,
+					}
+				}
+			]
+		});
+
+		$('[data-card-prev]').on('click', function() {
+			carousel_card.slick('slickPrev');
+		});
+
+		$('[data-card-next]').on('click', function() {
+			carousel_card.slick('slickNext');
+		});
+	}
+
+	// glightbox
+
+	const lightbox = GLightbox({
+		touchNavigation: true,
+		loop: true,
+		autoplayVideos: true
+	});
+
 	// Показываем полное описаине на странице объекта
 
 	// $('#show-info').on('click', function() {
@@ -437,94 +526,7 @@ $(function () {
 
 	// 
 
-	// Слайдер
-
-	function glidePage(event) {
-		let countSliderMax = event.slick("getSlick").slideCount,
-			countSliderActiveNum = event.slick('slickCurrentSlide') + 1,
-			countSliderText = countSliderActiveNum + ' of ' + countSliderMax;
-
-		$('[data-slider-pageCount]').attr('data-slider-pageCount', countSliderText);
-		$('[data-slider-pageCount]').html(countSliderText);
-	}
-
-	let carousel_image = $('.carousel-items');
-
-	if(carousel_image) {
-		carousel_image.slick({
-			// infinite: false,
-			accessibility: false,
-			slidesToShow: 1,
-			slidesToScroll: 1,
-			arrows: true,
-			appendArrows: carousel_image.parent(),
-			prevArrow: '<div class="absolute h-full top-0 left-3"><button data-slider-prev="true" class="absolute z-10 at-center-y left-0 ml-1 w-12 h-12 bg-white shadow border-gray-200 border-2 rounded-full text-center" type="button"><img class="relative -top-px w-3 inline-block" src="./img/svg/icon-left-arrow-black.svg" width="12" height="20"></button></div>',
-			nextArrow: '<div class="absolute h-full top-0 right-16"><button data-slider-next="true" class="absolute z-10 at-center-y left-0 ml-1 w-12 h-12 bg-white shadow border-gray-200 border-2 rounded-full text-center" type="button"><img class="relative -top-px w-3 inline-block" src="./img/svg/icon-right-arrow.svg" width="12" height="20"></button></div>',
-		});
-
-		glidePage(carousel_image);
-
-		$('[data-slider-prev]').on('click', function() {
-			carousel_image.slick('slickPrev');
-			glidePage(carousel_image);
-		});
-
-		$('[data-slider-next]').on('click', function() {
-			carousel_image.slick('slickNext');
-			glidePage(carousel_image);
-		});
-
-		$('[data-slider-active]').on('click', function() {
-			$('.carousel-items .carousel-slide').eq(carousel_image.slick('slickCurrentSlide') + 1).find('img').click();
-		});
-	}
-
-	let carousel_card = $('#carousel-card');
-
-	if(carousel_card) {
-		carousel_card.slick({
-			// infinite: false,
-			accessibility: false,
-			slidesToShow: 4,
-			slidesToScroll: 1,
-			swipeToSlide: true,
-			appendArrows: carousel_card.parent(),
-			prevArrow: '<div class="absolute h-full top-0 left-3"><button data-card-prev="true" class="absolute z-10 at-center-y left-0 ml-1 w-12 h-12 bg-white shadow border-gray-200 border-2 rounded-full text-center" type="button"><img class="relative -top-px w-3 inline-block" src="./img/svg/icon-left-arrow-black.svg" width="12" height="20"></button></div>',
-			nextArrow: '<div class="absolute h-full top-0 right-16"><button data-card-next="true" class="absolute z-10 at-center-y left-0 ml-1 w-12 h-12 bg-white shadow border-gray-200 border-2 rounded-full text-center" type="button"><img class="relative -top-px w-3 inline-block" src="./img/svg/icon-right-arrow.svg" width="12" height="20"></button></div>',
-			responsive: [
-				{
-					breakpoint: 768,
-					settings: {
-						slidesToShow: 2,
-						slidesToScroll: 1,
-					}
-				},
-				{
-					breakpoint: 480,
-					settings: {
-						slidesToShow: 1,
-						slidesToScroll: 1,
-					}
-				}
-			]
-		});
-
-		$('[data-card-prev]').on('click', function() {
-			carousel_card.slick('slickPrev');
-		});
-
-		$('[data-card-next]').on('click', function() {
-			carousel_card.slick('slickNext');
-		});
-	}
-
-	// glightbox
-
-	const lightbox = GLightbox({
-		touchNavigation: true,
-		loop: true,
-		autoplayVideos: true
-	});
+	
 
 	// validate
 
