@@ -1102,7 +1102,7 @@ img {
 }
 
 .shadow-lg {
-	box-shadow: var(--tw-ring-offset-shadow, 0 0 transparent), var(--tw-ring-shadow, 0 0 transparent), var(--tw-shadow)
+	box-shadow: 0 3px 15px rgb(0 0 0 / 12%)
 }
 
 .shadow-lg {
@@ -1612,7 +1612,6 @@ img {
 
 	.md\:text-5xl {
 		font-size: 3rem;
-		line-height: 1
 	}
 
 	.md\:my-0 {
@@ -1905,4 +1904,7 @@ img {
 }
 .z-1 {
 	z-index: 1;
+}
+.text-0\.5xl {
+    font-size: 1.375rem;
 }

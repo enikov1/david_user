@@ -196,7 +196,7 @@
 			</div>
 			<div class="ml-auto hidden md:flex">
 				<div class="flex items-center">
-					<div class="flex items-center border-l border-gray-300 flex-1 relative">
+					<div class="flex items-center flex-1 relative">
 						<div class="language-select">
 							<div class="flex items-center h-full p-3 w-full cursor-pointer">
 								<svg class="w-6 mr-2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" x="0" y="0" viewBox="0 0 480 480" style="enable-background:new 0 0 512 512" xml:space="preserve"><g><path xmlns="http://www.w3.org/2000/svg" d="m240 0c-132.546875 0-240 107.453125-240 240s107.453125 240 240 240 240-107.453125 240-240c-.148438-132.484375-107.515625-239.851562-240-240zm207.566406 324.078125-68.253906 11.777344c7.8125-28.652344 12.03125-58.164063 12.558594-87.855469h71.929687c-.902343 26.117188-6.398437 51.871094-16.234375 76.078125zm-431.367187-76.078125h71.929687c.527344 29.691406 4.746094 59.203125 12.558594 87.855469l-68.253906-11.777344c-9.835938-24.207031-15.332032-49.960937-16.234375-76.078125zm16.234375-92.078125 68.253906-11.777344c-7.8125 28.652344-12.03125 58.164063-12.558594 87.855469h-71.929687c.902343-26.117188 6.398437-51.871094 16.234375-76.078125zm215.566406-27.472656c28.746094.367187 57.421875 2.984375 85.761719 7.832031l28.238281 4.871094c8.675781 29.523437 13.34375 60.078125 13.878906 90.847656h-127.878906zm88.488281-7.9375c-29.238281-4.996094-58.828125-7.695313-88.488281-8.0625v-96c45.863281 4.40625 85.703125 46.398437 108.28125 107.511719zm-104.488281-8.0625c-29.660156.367187-59.242188 3.066406-88.480469 8.0625l-19.800781 3.425781c22.578125-61.128906 62.417969-103.136719 108.28125-107.523438zm-85.753906 23.832031c28.335937-4.847656 57.007812-7.464844 85.753906-7.832031v103.550781h-127.878906c.535156-30.769531 5.203125-61.324219 13.878906-90.847656zm-42.125 111.71875h127.878906v103.550781c-28.746094-.367187-57.421875-2.984375-85.761719-7.832031l-28.238281-4.871094c-8.675781-29.523437-13.34375-60.078125-13.878906-90.847656zm39.390625 111.488281c29.238281 5.003907 58.824219 7.714844 88.488281 8.105469v96c-45.863281-4.410156-85.703125-46.402344-108.28125-107.515625zm104.488281 8.105469c29.660156-.390625 59.242188-3.101562 88.480469-8.105469l19.800781-3.425781c-22.578125 61.128906-62.417969 103.136719-108.28125 107.523438zm85.753906-23.875c-28.335937 4.847656-57.007812 7.464844-85.753906 7.832031v-103.550781h127.878906c-.535156 30.769531-5.203125 61.324219-13.878906 90.847656zm58.117188-111.71875c-.527344-29.691406-4.746094-59.203125-12.558594-87.855469l68.253906 11.777344c9.835938 24.207031 15.332032 49.960937 16.234375 76.078125zm47.601562-93.710938-65.425781-11.289062c-11.761719-38.371094-33.765625-72.808594-63.648437-99.601562 55.878906 18.648437 102.21875 58.457031 129.074218 110.890624zm-269.871094-110.890624c-29.882812 26.792968-51.886718 61.230468-63.648437 99.601562l-65.425781 11.289062c26.855468-52.433593 73.195312-92.242187 129.074218-110.890624zm-129.074218 314.3125 65.425781 11.289062c11.761719 38.371094 33.765625 72.808594 63.648437 99.601562-55.878906-18.648437-102.21875-58.457031-129.074218-110.890624zm269.871094 110.890624c29.882812-26.792968 51.886718-61.230468 63.648437-99.601562l65.425781-11.289062c-26.855468 52.433593-73.195312 92.242187-129.074218 110.890624zm0 0" fill="#2563eb" data-original="#000000" style=""/></g></svg>
@@ -286,7 +286,7 @@
 										<pattern id="pattern0" patternUnits="userSpaceOnUse" width="116" height="67">
 											<use xlink:href="#image0"></use>
 										</pattern>
-										<image width="116" height="67" id="image0" x="0" y="0"
+										<image id="image0" x="0" y="0"
 											xlink:href="./img/svg/circle-ocean.svg">
 										</image>
 									</defs>
@@ -894,7 +894,7 @@
 																</label>
 															</div>
 															<div class="w-1/3 px-2 py-1">
-																<label class="radio"><input class="radio-input" type="radio" name="status">
+																<label class="radio"><input checked class="radio-input" type="radio" name="status">
 																	<span class="radio-label">
 																		<span>All</span>
 																	</span>
@@ -1287,6 +1287,19 @@
 
 					<div class="-mx-2 flex flex-wrap my-8 sm:flex-no-wrap sm:mx-0 sm:my-6">
 						<ul class="flex flex-col m-auto min-w-48 sm:flex-row sm:m-0 sm:min-w-none">
+							<li class="sm:flex mb-3 order-1 sm:order-1 sm:mb-0">
+								<a href="#"
+									class="btn btn-flex btn-tile h-12 items-center justify-center sm:mb-0 sm:mr-2 sm:min-w-36 sm:mx-0 sm:ml-2 sm:flex-none">
+									<span class="mr-2">
+										<svg xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewBox="0 0 9 16" fill="none">
+											<path
+												d="M0.784078 8.90824C0.300575 8.39186 0.300241 7.54055 0.783104 7.02274L6.71331 0.677427C7.19982 0.157776 7.98847 0.157776 8.47542 0.677889C8.9621 1.19882 8.9621 2.04345 8.47536 2.56334L3.42703 7.96557L8.47586 13.3679C8.96294 13.8883 8.96294 14.7333 8.47516 15.2539C7.98787 15.7728 7.20026 15.7728 6.71349 15.2529L0.784078 8.90824Z"
+												fill="white"></path>
+										</svg>
+									</span>
+									<span class="truncate">Previous page</span>
+								</a>
+							</li>
 							<li class="flex order-2">
 								<div class="text-center w-full order-1 sm:w-auto sm:mt-0 sm:order-none">
 									<ul class="inline-flex border border-gray-300 inline-flex bg-white overflow-hidden h-12 rounded-lg shadow">
@@ -2591,7 +2604,7 @@
 									</label>
 								</div>
 								<div class="w-full px-2 py-1">
-									<label class="radio"><input class="radio-input" type="radio" name="status">
+									<label class="radio"><input checked class="radio-input" type="radio" name="status">
 										<span class="radio-label">
 											<span>All</span>
 										</span>
@@ -2674,7 +2687,7 @@
 						</div>
 						<a class="hover-underline text-primary" href="#">View properties to rent</a>
 					</div>
-					<div class="px-4 py-2 border-t border-wafer mt-auto">
+					<div class="px-4 py-2 border-t border-wafer mt-auto sticky bottom-0">
 						<button type="button" class="btn btn-blue w-full">Search properties</button>
 					</div>
 				</div>
@@ -2754,13 +2767,7 @@
 			<li class="autosuggest-item autosuggest-item">
 				<div class="flex py-2 px-4">
 					<span class="autosuggest-flag">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 85.333 512 341.333">
-							<rect y="85.331" fill="#FFDA44" width="512" height="341.337" />
-							<g>
-								<rect y="85.331" fill="#D80027" width="512" height="113.775" />
-								<rect y="312.882" fill="#D80027" width="512" height="113.775" />
-							</g>
-						</svg>
+						<img src="./img/flag_m.jpg" alt="">
 					</span>
 					<div class="leading-tight">
 						<span class="font-normal">Madrid</span>
@@ -2771,13 +2778,7 @@
 			<li class="autosuggest-item autosuggest-item">
 				<div class="flex py-2 px-4">
 					<span class="autosuggest-flag">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 85.333 512 341.333">
-							<rect y="85.331" fill="#FFDA44" width="512" height="341.337" />
-							<g>
-								<rect y="85.331" fill="#D80027" width="512" height="113.775" />
-								<rect y="312.882" fill="#D80027" width="512" height="113.775" />
-							</g>
-						</svg>
+						<img src="./img/flag_m.jpg" alt="">
 					</span>
 					<div class="leading-tight">
 						<span class="font-normal">Madrid</span>
@@ -2788,13 +2789,7 @@
 			<li class="autosuggest-item autosuggest-item">
 				<div class="flex py-2 px-4">
 					<span class="autosuggest-flag">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 85.333 512 341.333">
-							<rect y="85.331" fill="#FFDA44" width="512" height="341.337" />
-							<g>
-								<rect y="85.331" fill="#D80027" width="512" height="113.775" />
-								<rect y="312.882" fill="#D80027" width="512" height="113.775" />
-							</g>
-						</svg>
+						<img src="./img/flag_m.jpg" alt="">
 					</span>
 					<div class="leading-tight">
 						<span class="font-normal">Madrid</span>
@@ -2805,13 +2800,7 @@
 			<li class="autosuggest-item autosuggest-item">
 				<div class="flex py-2 px-4">
 					<span class="autosuggest-flag">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 85.333 512 341.333">
-							<rect y="85.331" fill="#FFDA44" width="512" height="341.337" />
-							<g>
-								<rect y="85.331" fill="#D80027" width="512" height="113.775" />
-								<rect y="312.882" fill="#D80027" width="512" height="113.775" />
-							</g>
-						</svg>
+						<img src="./img/flag_m.jpg" alt="">
 					</span>
 					<div class="leading-tight">
 						<span class="font-normal">Madrid</span>
@@ -2822,13 +2811,7 @@
 			<li class="autosuggest-item autosuggest-item">
 				<div class="flex py-2 px-4">
 					<span class="autosuggest-flag">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 85.333 512 341.333">
-							<rect y="85.331" fill="#FFDA44" width="512" height="341.337" />
-							<g>
-								<rect y="85.331" fill="#D80027" width="512" height="113.775" />
-								<rect y="312.882" fill="#D80027" width="512" height="113.775" />
-							</g>
-						</svg>
+						<img src="./img/flag_m.jpg" alt="">
 					</span>
 					<div class="leading-tight">
 						<span class="font-normal">Madrid</span>
@@ -2839,13 +2822,7 @@
 			<li class="autosuggest-item autosuggest-item">
 				<div class="flex py-2 px-4">
 					<span class="autosuggest-flag">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 85.333 512 341.333">
-							<rect y="85.331" fill="#FFDA44" width="512" height="341.337" />
-							<g>
-								<rect y="85.331" fill="#D80027" width="512" height="113.775" />
-								<rect y="312.882" fill="#D80027" width="512" height="113.775" />
-							</g>
-						</svg>
+						<img src="./img/flag_m.jpg" alt="">
 					</span>
 					<div class="leading-tight">
 						<span class="font-normal">Madrid</span>
@@ -2856,13 +2833,7 @@
 			<li class="autosuggest-item autosuggest-item">
 				<div class="flex py-2 px-4">
 					<span class="autosuggest-flag">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 85.333 512 341.333">
-							<rect y="85.331" fill="#FFDA44" width="512" height="341.337" />
-							<g>
-								<rect y="85.331" fill="#D80027" width="512" height="113.775" />
-								<rect y="312.882" fill="#D80027" width="512" height="113.775" />
-							</g>
-						</svg>
+						<img src="./img/flag_m.jpg" alt="">
 					</span>
 					<div class="leading-tight">
 						<span class="font-normal">Madrid</span>
@@ -2873,13 +2844,7 @@
 			<li class="autosuggest-item autosuggest-item">
 				<div class="flex py-2 px-4">
 					<span class="autosuggest-flag">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 85.333 512 341.333">
-							<rect y="85.331" fill="#FFDA44" width="512" height="341.337" />
-							<g>
-								<rect y="85.331" fill="#D80027" width="512" height="113.775" />
-								<rect y="312.882" fill="#D80027" width="512" height="113.775" />
-							</g>
-						</svg>
+						<img src="./img/flag_m.jpg" alt="">
 					</span>
 					<div class="leading-tight">
 						<span class="font-normal">Madrid</span>
@@ -2890,13 +2855,7 @@
 			<li class="autosuggest-item autosuggest-item">
 				<div class="flex py-2 px-4">
 					<span class="autosuggest-flag">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 85.333 512 341.333">
-							<rect y="85.331" fill="#FFDA44" width="512" height="341.337" />
-							<g>
-								<rect y="85.331" fill="#D80027" width="512" height="113.775" />
-								<rect y="312.882" fill="#D80027" width="512" height="113.775" />
-							</g>
-						</svg>
+						<img src="./img/flag_m.jpg" alt="">
 					</span>
 					<div class="leading-tight">
 						<span class="font-normal">Madrid</span>
@@ -2907,13 +2866,7 @@
 			<li class="autosuggest-item autosuggest-item">
 				<div class="flex py-2 px-4">
 					<span class="autosuggest-flag">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 85.333 512 341.333">
-							<rect y="85.331" fill="#FFDA44" width="512" height="341.337" />
-							<g>
-								<rect y="85.331" fill="#D80027" width="512" height="113.775" />
-								<rect y="312.882" fill="#D80027" width="512" height="113.775" />
-							</g>
-						</svg>
+						<img src="./img/flag_m.jpg" alt="">
 					</span>
 					<div class="leading-tight">
 						<span class="font-normal">Madrid</span>

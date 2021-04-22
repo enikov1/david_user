@@ -99,6 +99,11 @@ $(function () {
 		$('#modal-share').fadeIn();
 	});
 
+	$(window).on('resize', function() {
+		$('#modal-share').fadeOut();
+		$('#share-panel').fadeOut();
+	});
+
 	$('[data-target-copy-link="true"]').on('click', function() {
 		$('[data-trigger-copy-link="true"]').removeClass('hidden');
 
@@ -131,6 +136,17 @@ $(function () {
 			'display': 'block',
 		});
 
+		$('#autosuggest-1').find('.autosuggest-item').on('click', function() {
+			let textSearch = $(this).find('.leading-tight span:first-child').text();
+
+			$('.form-search-input').val(textSearch);
+			$('.form-search-input').closest('.search').find('.form-reset').removeClass('hidden');
+		});
+
+		$('.form-reset').on('click', function() {
+			$(this).addClass('hidden');
+		});
+
 	}
 
 	$('.form-reset').on('click', function() {
@@ -140,11 +156,7 @@ $(function () {
 	$('.form-search-input').on('input', function() {
 		loadSearchResult($(this));
 
-		if($(this).val().length >= 1) {
-			$(this).closest('.search').find('.form-reset').removeClass('opacity-0');
-		} else {
-			$(this).closest('.search').find('.form-reset').addClass('opacity-0');
-		}
+		if($(this).val().length == 0) $(this).closest('.search').find('.form-reset').addClass('hidden');
 	});
 
 		
@@ -414,7 +426,12 @@ $(function () {
 	// Active "A different question"
 
 	$('[data-target-show-textarea]').on('click', function() {
-		$('.textarea-form').toggleClass('hidden');
+
+		let _this = $(this);
+		let _id = _this.attr('data-target-show-textarea');
+		let _target = $(_id);
+
+		_target.toggleClass('hidden');
 		$(this).toggle();
 	});
 
@@ -664,24 +681,36 @@ $(function () {
 		tippy(document.querySelectorAll('.tippy-show'));
 	});
 
-	$('.textarea-form').each(function() {
-		if($(this).attr('data-expand-textarea', false)) {
-			$(this).hide();
-		}
-	});
+	
 
-	$('[data-target-textarea]').on('click', function() {
+	$('[data-target-textarea]').on('change', function() {
 		let _this = $(this);
 		let _id = _this.attr('data-target-textarea');
 		let _target = $(_id);
 
-		(_this.is(':checked')) ? _target.show() : _target.hide();
+		(_this.is(':checked')) ? _target.removeClass('hidden') : _target.addClass('hidden');
 	});
 
 	// modal_button
 
+	function stopVideo() {
+		$("iframe").each(function() {
+        	$(this)[0].contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*')
+        });
+	}
+
 	$('.media-preview-close').on('click', function() {
 		$('.media-preview-overlay').removeClass('active');
+
+		stopVideo();
+	});
+
+	$(document).mouseup(function (e) {
+		var container = $(".media-preview-modal");
+		if (container.has(e.target).length === 0){
+			container.parent().removeClass('active');
+			stopVideo();
+		}
 	});
 
 	$('[data-component="video_preview"]').on('click', function() {

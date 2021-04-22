@@ -254,6 +254,7 @@
 	overflow: visible;
 	border-bottom-left-radius: 0;
 	border-bottom-right-radius: 0;
+	padding-bottom: 10rem;
 }
 
 .main-bottom-image {
@@ -504,6 +505,9 @@
 	height: 2.5rem;
 	margin-top: -1.10rem;
 }
+.form-reset.hidden {
+	display: none !important;
+}
 
 .search .form-reset {
 	right: 10px;
@@ -571,7 +575,7 @@
 
 }
 
-@media (min-width: 992px) {
+@media (min-width: 991px) {
 
 	.md\:column-count-3 {
 		-webkit-column-count: 3;
@@ -876,7 +880,7 @@
 
 
 
-@media (min-width: 900px) {
+@media (min-width: 992px) {
 
 	.smd\:block {
 		display: block;
@@ -1964,7 +1968,7 @@ input.error {
 	left: 0;
 	right: 0;
 	top: 0;
-	z-index: 50;
+	z-index: 200;
 	background-color: rgba(41, 41, 50, .8);
 	display: none;
 }
