@@ -1491,7 +1491,7 @@ img {
 	max-height: 30rem !important
 }
 
-@media (min-width:991px) {
+@media (min-width:992px) {
 	
 	.md\:max-w-56 {
 		max-width: 14rem;

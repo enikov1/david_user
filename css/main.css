@@ -254,7 +254,6 @@
 	overflow: visible;
 	border-bottom-left-radius: 0;
 	border-bottom-right-radius: 0;
-	padding-bottom: 10rem;
 }
 
 .main-bottom-image {
@@ -575,7 +574,7 @@
 
 }
 
-@media (min-width: 991px) {
+@media (min-width: 992px) {
 
 	.md\:column-count-3 {
 		-webkit-column-count: 3;
@@ -1572,6 +1571,24 @@ i+.panel-dropup-title {
 
 	.share-panel {
 		display: none !important;
+	}
+
+	.modal_form_message {
+		display: block;
+	}
+
+	.modal_form_message > div {
+		padding: 0;
+		height: 100%;
+		background-color: #e7e7ed;
+	}
+
+	.modal_form_message>div > .relative {
+		
+	}
+
+	.modal_form_message>div .bg-white {
+		height: 100%;
 	}
 	
 }

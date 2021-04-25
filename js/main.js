@@ -8,7 +8,6 @@ $(function () {
 			sticky_block = $('.sticky-block');
 
 		($(this).scrollTop() >= posi) ? sticky_block.addClass('active') : sticky_block.removeClass('active');
-
 	});
 
 	// 
@@ -214,9 +213,10 @@ $(function () {
 	function loadSearchResult(elem) {
 		let search_width = elem.closest('.search').width(),
 			search_left = elem.offset().left,
-			search_top = elem.offset().top + 53;
+			search_top = elem.offset().top + 53,
+			window_wrap = $('#autosuggest-1');
 		
-		$('#autosuggest-1').css({
+		window_wrap.css({
 			'position': 'absolute',
 			'top': search_top,
 			'left': search_left,
@@ -225,15 +225,24 @@ $(function () {
 			'display': 'block',
 		});
 
-		$('#autosuggest-1').find('.autosuggest-item').on('click', function() {
+		window_wrap.find('.autosuggest-item').on('click', function() {
 			let textSearch = $(this).find('.leading-tight span:first-child').text();
 
 			$('.form-search-input').val(textSearch);
 			$('.form-search-input').closest('.search').find('.form-reset').removeClass('hidden');
+
+			window_wrap.fadeOut();
 		});
 
 		$('.form-reset').on('click', function() {
 			$(this).addClass('hidden');
+		});
+
+		$(document).mouseup(function (e) {
+			let _target = $(".autosuggest-overlay, .search");
+			if (_target.has(e.target).length === 0){
+				window_wrap.fadeOut();
+			}
 		});
 
 	}
@@ -245,7 +254,10 @@ $(function () {
 	$('.form-search-input').on('input', function() {
 		loadSearchResult($(this));
 
-		if($(this).val().length == 0) $(this).closest('.search').find('.form-reset').addClass('hidden');
+		if($(this).val().length == 0) {
+			$(this).closest('.search').find('.form-reset').addClass('hidden');
+			$('#autosuggest-1').fadeOut();
+		}
 	});
 
 		
