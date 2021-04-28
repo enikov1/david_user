@@ -6,10 +6,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Search not</title>
 
-	<link rel="stylesheet" href="css/inline.css">
+	<link rel="stylesheet" href="_search_not_result/libs/tailwind.css">
 
-	<link rel="stylesheet" href="css/libs/tailwind.css">
-	<link rel="stylesheet" href="css/libs/slick.css">
+	<link rel="stylesheet" href="_search_not_result/inline.css">
+	<link rel="stylesheet" href="_search_not_result/main.css">
 
 
 </head>
@@ -244,11 +244,11 @@
 				</div>
 			</div>
 			<div class="w-full mx-2 md:hidden">
-				<form class="relative w-full z-10">
+				<form class="search relative w-full z-10">
 					<div class="relative">
 						<input class="form-search-input topbar-input" type="text" placeholder="e.g: Alicante, Majorca, Malaga">
 					</div>
-					<button type="reset" class="form-reset opacity-0">
+					<button type="reset" class="form-reset hidden">
 								<svg width="17" height="17" fill="none">
 									<circle cx="8.277" cy="8.073" r="8" fill="#8A8BA1"></circle>
 									<path fill-rule="evenodd" clip-rule="evenodd" d="M4.6 4.73a.858.858 0 011.131 0l2.546 2.315 2.546-2.314a.858.858 0 011.13 0 .682.682 0 010 1.028L9.409 8.073l2.546 2.314a.682.682 0 010 1.029.858.858 0 01-1.132 0L8.277 9.102 5.73 11.416a.858.858 0 01-1.131 0 .682.682 0 010-1.029l2.546-2.314L4.6 5.76a.681.681 0 010-1.028z" fill="#fff"></path>
@@ -562,12 +562,12 @@
 						<div class="container-fluid--max-width mx-auto">
 							<div id="search-default" class="flex items-stretch -mx-2">
 								<div class="p-2 pl-0 w-5/12">
-									<form class="flex w-full">
+									<form class="search flex w-full">
 										<div class="relative w-full z-4 mr-2">
 											<div class="relative">
 												<input type="text" class="form-search-input" placeholder="e.g: Alicante, Majorca, Malaga" maxlength="80">
 											</div>
-											<button type="reset" class="form-reset opacity-0">
+											<button type="reset" class="form-reset hidden">
 												<svg width="17" height="17" fill="none">
 													<circle cx="8.277" cy="8.073" r="8" fill="#8A8BA1"></circle>
 													<path fill-rule="evenodd" clip-rule="evenodd" d="M4.6 4.73a.858.858 0 011.131 0l2.546 2.315 2.546-2.314a.858.858 0 011.13 0 .682.682 0 010 1.028L9.409 8.073l2.546 2.314a.682.682 0 010 1.029.858.858 0 01-1.132 0L8.277 9.102 5.73 11.416a.858.858 0 01-1.131 0 .682.682 0 010-1.029l2.546-2.314L4.6 5.76a.681.681 0 010-1.028z" fill="#fff"></path>
@@ -2068,18 +2068,124 @@
 		</div>
 	</div>
 
-	<!-- support styles -->
-
-	<link rel="stylesheet" href="css/main.css">
-	<link rel="stylesheet" href="css/libs/glightbox.min.css">
+	<div class="autosuggest-overlay">
+		<div id="autosuggest-1" class="autosuggest-container">
+			<ul>
+				<li class="autosuggest-item autosuggest-item">
+					<div class="flex py-2 px-4">
+						<span class="autosuggest-flag">
+							<img src="./img/flag_m.jpg" alt="">
+						</span>
+						<div class="leading-tight">
+							<span class="font-normal">Madrid</span>
+							<span class="block text-gray-400">Madrid province</span>
+						</div>
+					</div>
+				</li>
+				<li class="autosuggest-item autosuggest-item">
+					<div class="flex py-2 px-4">
+						<span class="autosuggest-flag">
+							<img src="./img/flag_m.jpg" alt="">
+						</span>
+						<div class="leading-tight">
+							<span class="font-normal">Madrid</span>
+							<span class="block text-gray-400">Madrid province</span>
+						</div>
+					</div>
+				</li>
+				<li class="autosuggest-item autosuggest-item">
+					<div class="flex py-2 px-4">
+						<span class="autosuggest-flag">
+							<img src="./img/flag_m.jpg" alt="">
+						</span>
+						<div class="leading-tight">
+							<span class="font-normal">Madrid</span>
+							<span class="block text-gray-400">Madrid province</span>
+						</div>
+					</div>
+				</li>
+				<li class="autosuggest-item autosuggest-item">
+					<div class="flex py-2 px-4">
+						<span class="autosuggest-flag">
+							<img src="./img/flag_m.jpg" alt="">
+						</span>
+						<div class="leading-tight">
+							<span class="font-normal">Madrid</span>
+							<span class="block text-gray-400">Madrid province</span>
+						</div>
+					</div>
+				</li>
+				<li class="autosuggest-item autosuggest-item">
+					<div class="flex py-2 px-4">
+						<span class="autosuggest-flag">
+							<img src="./img/flag_m.jpg" alt="">
+						</span>
+						<div class="leading-tight">
+							<span class="font-normal">Madrid</span>
+							<span class="block text-gray-400">Madrid province</span>
+						</div>
+					</div>
+				</li>
+				<li class="autosuggest-item autosuggest-item">
+					<div class="flex py-2 px-4">
+						<span class="autosuggest-flag">
+							<img src="./img/flag_m.jpg" alt="">
+						</span>
+						<div class="leading-tight">
+							<span class="font-normal">Madrid</span>
+							<span class="block text-gray-400">Madrid province</span>
+						</div>
+					</div>
+				</li>
+				<li class="autosuggest-item autosuggest-item">
+					<div class="flex py-2 px-4">
+						<span class="autosuggest-flag">
+							<img src="./img/flag_m.jpg" alt="">
+						</span>
+						<div class="leading-tight">
+							<span class="font-normal">Madrid</span>
+							<span class="block text-gray-400">Madrid province</span>
+						</div>
+					</div>
+				</li>
+				<li class="autosuggest-item autosuggest-item">
+					<div class="flex py-2 px-4">
+						<span class="autosuggest-flag">
+							<img src="./img/flag_m.jpg" alt="">
+						</span>
+						<div class="leading-tight">
+							<span class="font-normal">Madrid</span>
+							<span class="block text-gray-400">Madrid province</span>
+						</div>
+					</div>
+				</li>
+				<li class="autosuggest-item autosuggest-item">
+					<div class="flex py-2 px-4">
+						<span class="autosuggest-flag">
+							<img src="./img/flag_m.jpg" alt="">
+						</span>
+						<div class="leading-tight">
+							<span class="font-normal">Madrid</span>
+							<span class="block text-gray-400">Madrid province</span>
+						</div>
+					</div>
+				</li>
+				<li class="autosuggest-item autosuggest-item">
+					<div class="flex py-2 px-4">
+						<span class="autosuggest-flag">
+							<img src="./img/flag_m.jpg" alt="">
+						</span>
+						<div class="leading-tight">
+							<span class="font-normal">Madrid</span>
+							<span class="block text-gray-400">Madrid province</span>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
 
 	<script src="js/libs/jquery.min.js"></script>
-	<script src="js/libs/glightbox.min.js"></script>
-	<script src="js/libs/slick.min.js"></script>
-	<script src="js/libs/jquery.expandable.js"></script>
-
-	<script src="js/libs/jquery.validate.min.js"></script>
-	<script src="js/libs/validatePhoneInput.js"></script>
 
 	<script src="js/main.js"></script>
 

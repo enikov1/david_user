@@ -25,7 +25,7 @@ $(function () {
 
 	let carousel_image = $('.carousel-items');
 
-	if(carousel_image) {
+	if(carousel_image.length) {
 		carousel_image.slick({
 			// infinite: false,
 			accessibility: false,
@@ -56,7 +56,7 @@ $(function () {
 
 	let carousel_card = $('#carousel-card');
 
-	if(carousel_card) {
+	if(carousel_card.length) {
 		carousel_card.slick({
 			// infinite: false,
 			accessibility: false,
@@ -94,12 +94,14 @@ $(function () {
 	}
 
 	// glightbox
-
-	const lightbox = GLightbox({
-		touchNavigation: true,
-		loop: true,
-		autoplayVideos: true
-	});
+	if($('[data-gallery="glightbox"]').length) {
+		const lightbox = GLightbox({
+			touchNavigation: true,
+			loop: true,
+			autoplayVideos: true
+		});
+	}
+	
 
 	// Показываем полное описаине на странице объекта
 
@@ -561,127 +563,137 @@ $(function () {
 			}
 		});
 	});
-	
-	$('#form_validate_1').validate({
-		rules: {
-			name: {
-				required: true,
-				minlength: 5
-			},
-			email: {
-				required: true,
-				email: true
-			},
-			tel: {
-				required: true
-			}
-		},
-		messages: {
-			name: "Please enter your name",
-			email: "Please provide a valid email address",
-			tel: "Please enter valid phone number"
-		},
-		highlight: function(element, errorClass, validClass) {
-			$(element).prev('label').addClass('error');
-			$(element).parent().closest('.telField').addClass('error');
-		},
-		unhighlight: function(element, errorClass, validClass) {
-			$(element).prev('label').removeClass('error');
-			$(element).parent().closest('.telField').removeClass('error');
-		}
-	});
 
-	$('#form_validate_2').validate({
-		ignore: [],
-		rules: {
-			name: {
-				required: true,
-				minlength: 5
+	if($('#form_validate_1').length) {
+		$('#form_validate_1').validate({
+			rules: {
+				name: {
+					required: true,
+					minlength: 5
+				},
+				email: {
+					required: true,
+					email: true
+				},
+				tel: {
+					required: true
+				}
 			},
-			email: {
-				required: true,
-				email: true
+			messages: {
+				name: "Please enter your name",
+				email: "Please provide a valid email address",
+				tel: "Please enter valid phone number"
 			},
-			tel: {
-				required: true
+			highlight: function(element, errorClass, validClass) {
+				$(element).prev('label').addClass('error');
+				$(element).parent().closest('.telField').addClass('error');
 			},
-			checkbox3: {
-				required: true,
-				// maxlength: 0
+			unhighlight: function(element, errorClass, validClass) {
+				$(element).prev('label').removeClass('error');
+				$(element).parent().closest('.telField').removeClass('error');
 			}
-		},
-		messages: {
-			name: "Please enter your name",
-			email: "Please provide a valid email address",
-			tel: "Please enter valid phone number"
-			// checkbox3: ""
-		},
-		highlight: function(element, errorClass, validClass) {
-			$(element).prev('label').addClass('error');
-			$(element).parent().closest('.telField').addClass('error');
-			console.log(element);
-		},
-		unhighlight: function(element, errorClass, validClass) {
-			$(element).prev('label').removeClass('error');
-			$(element).parent().closest('.telField').removeClass('error');
-		}
-	});
-	$('#form_validate_3').validate({
-		rules: {
-			name: {
-				required: true,
-				minlength: 5
+		});
+	}
+	
+	if($('#form_validate_2').length) {
+		$('#form_validate_2').validate({
+			ignore: [],
+			rules: {
+				name: {
+					required: true,
+					minlength: 5
+				},
+				email: {
+					required: true,
+					email: true
+				},
+				tel: {
+					required: true
+				},
+				checkbox3: {
+					required: true,
+					// maxlength: 0
+				}
 			},
-			email: {
-				required: true,
-				email: true
+			messages: {
+				name: "Please enter your name",
+				email: "Please provide a valid email address",
+				tel: "Please enter valid phone number"
+				// checkbox3: ""
 			},
-			tel: {
-				required: true
+			highlight: function(element, errorClass, validClass) {
+				$(element).prev('label').addClass('error');
+				$(element).parent().closest('.telField').addClass('error');
+				console.log(element);
+			},
+			unhighlight: function(element, errorClass, validClass) {
+				$(element).prev('label').removeClass('error');
+				$(element).parent().closest('.telField').removeClass('error');
 			}
-		},
-		messages: {
-			name: "Please enter your name",
-			email: "Please provide a valid email address",
-			tel: "Please enter valid phone number"
-		},
-		highlight: function(element, errorClass, validClass) {
-			$(element).prev('label').addClass('error');
-			$(element).parent().closest('.telField').addClass('error');
-		},
-		unhighlight: function(element, errorClass, validClass) {
-			$(element).prev('label').removeClass('error');
-			$(element).parent().closest('.telField').removeClass('error');
-		}
-	});
-	$('#form_validate_4').validate({
-		rules: {
-			name: {
-				required: true,
-				minlength: 5
+		});
+	}
+
+	if($('#form_validate_3').length) {
+		$('#form_validate_3').validate({
+			rules: {
+				name: {
+					required: true,
+					minlength: 5
+				},
+				email: {
+					required: true,
+					email: true
+				},
+				tel: {
+					required: true
+				}
 			},
-			email: {
-				required: true,
-				email: true
+			messages: {
+				name: "Please enter your name",
+				email: "Please provide a valid email address",
+				tel: "Please enter valid phone number"
 			},
-			tel: {
-				required: true
+			highlight: function(element, errorClass, validClass) {
+				$(element).prev('label').addClass('error');
+				$(element).parent().closest('.telField').addClass('error');
+			},
+			unhighlight: function(element, errorClass, validClass) {
+				$(element).prev('label').removeClass('error');
+				$(element).parent().closest('.telField').removeClass('error');
 			}
-		},
-		messages: {
-			name: "Please enter your name",
-			email: "Please provide a valid email address",
-			tel: "Please enter valid phone number"
-		},
-		highlight: function(element, errorClass, validClass) {
-			$(element).prev('label').addClass('error');
-			$(element).parent().closest('.telField').addClass('error');
-		},
-		unhighlight: function(element, errorClass, validClass) {
-			$(element).prev('label').removeClass('error');
-			$(element).parent().closest('.telField').removeClass('error');
-		}
-	});
+		});
+	}
+	if($('#form_validate_4').length) {
+		$('#form_validate_4').validate({
+			rules: {
+				name: {
+					required: true,
+					minlength: 5
+				},
+				email: {
+					required: true,
+					email: true
+				},
+				tel: {
+					required: true
+				}
+			},
+			messages: {
+				name: "Please enter your name",
+				email: "Please provide a valid email address",
+				tel: "Please enter valid phone number"
+			},
+			highlight: function(element, errorClass, validClass) {
+				$(element).prev('label').addClass('error');
+				$(element).parent().closest('.telField').addClass('error');
+			},
+			unhighlight: function(element, errorClass, validClass) {
+				$(element).prev('label').removeClass('error');
+				$(element).parent().closest('.telField').removeClass('error');
+			}
+		});
+	}
+	
 
 	$('[name=tel]').bind('change keyup input click', function () {
         if (this.value.match(/[^+\d]/g)) {
