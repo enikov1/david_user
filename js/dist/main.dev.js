@@ -86,59 +86,47 @@ $(function () {
       autoplayVideos: true
     });
   } // Показываем полное описаине на странице объекта
-  // $('#show-info').on('click', function() {
-  // 	let _self = $(this),
-  // 		textButton = _self.find('span');
-  // 	_self.toggleClass('expanded');
-  // 	$('.article-content-text').toggleClass('active');
-  // 	(_self.hasClass('expanded')) ? textButton.text('Show less') : textButton.text('Show more');
-  // });
 
 
-  var ellipsesText = "...";
-  var expandText = "Show more";
-  var collapseText = "Show less";
+  var ellipsesText = "...",
+      expandText = "Show more",
+      collapseText = "Show less",
+      buttonExpand = $(".article-content-trigger"),
+      maxLength = $('.expandable-text').attr('data-collapse-limit');
   $('.expandable-text').each(function () {
     var _this = $(this),
         _text = _this.html(),
         _text_count = _text.length;
 
-    if (_text_count > 100) {
-      var collapsedContent = _text.substr(0, 100);
+    if (_text_count > maxLength) {
+      var collapsedContent = _text.substr(0, maxLength);
 
+      buttonExpand.removeClass('hidden');
       $('body').append($('<div class="expandable-buffer">' + '</div>'));
       $('.expandable-buffer').html(_this.html());
 
       _this.append("<p>").addClass('expanded-content').html(collapsedContent + ellipsesText);
     }
-  }); // let ellipsesText = "...";
-  // let expandText = "Show more";
-  // let collapseText = "Show less";
-  // $('.expandable-text').each(function() {
-  // 	let content = $(this).html();
-  // 	let collapseLimit = $(this).data('collapse-limit');
-  // 	if(content.length > collapseLimit) {
-  // 	let collapsedContent = content.substr(0, collapseLimit);
-  // 	let expandedContent = content.substr(collapseLimit-1, content.length - collapseLimit);
-  // 		$(this).empty();
-  // 		$(this).append($('<p />').addClass('collapsed-content').html(collapsedContent + '<span class="ellipses">...</span>'));
-  // 		// $(this).append($('<span />').addClass('ellipses').html(ellipsesText));
-  // 		$(this).append($('<p />').addClass('expanded-content').html($('.expandable-text').html()));
-  // 		// $(this).append($('<button />').addClass('trigger').html(expandText));
-  // 	}
-  // });
+  });
+  buttonExpand.on('click', function () {
+    var _this = $(this),
+        _text = _this.siblings('.expandable-text');
 
-  $(".article-content-trigger").on('click', function () {
-    if ($('.expanded-content').is(":visible")) {
-      $(this).removeClass('expanded');
-      $(this).find('span').text(expandText);
+    if (!_this.hasClass('expanded')) {
+      _text.empty().append($('.expandable-buffer').html());
+
+      _this.addClass('expanded');
+
+      _this.find('span').text(collapseText);
     } else {
-      $(this).addClass('expanded');
-      $(this).find('span').text(collapseText);
-    } // $(this).siblings('.expandable-text').find('.ellipses').toggle();
+      var collapsedContent = _text.html().substr(0, maxLength);
 
+      _this.removeClass('expanded');
 
-    $(this).siblings('.expandable-text').find('.expanded-content').toggle();
+      _this.find('span').text(expandText);
+
+      _text.html(collapsedContent + ellipsesText);
+    }
   }); // 
   // Показываем скрытые элементы в блоке "Key features"
 

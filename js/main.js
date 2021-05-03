@@ -105,29 +105,22 @@ $(function () {
 
 	// Показываем полное описаине на странице объекта
 
-	// $('#show-info').on('click', function() {
-
-	// 	let _self = $(this),
-	// 		textButton = _self.find('span');
-
-	// 	_self.toggleClass('expanded');
-
-	// 	$('.article-content-text').toggleClass('active');
-
-	// 	(_self.hasClass('expanded')) ? textButton.text('Show less') : textButton.text('Show more');
-	// });
-
-	let ellipsesText = "...";
-	let expandText = "Show more";
-	let collapseText = "Show less";
+	let ellipsesText = "...",
+		expandText = "Show more",
+		collapseText = "Show less",
+		buttonExpand = $(".article-content-trigger"),
+		maxLength = $('.expandable-text').attr('data-collapse-limit');
 
 	$('.expandable-text').each(function() {
 		let _this = $(this),
 			_text = _this.html(),
 			_text_count = _text.length;
 
-		if(_text_count > 100) {
-			let collapsedContent = _text.substr(0, 100);
+		if(_text_count > maxLength) {
+			let collapsedContent = _text.substr(0, maxLength);
+			
+			buttonExpand.removeClass('hidden');
+
 			$('body').append($('<div class="expandable-buffer">'+'</div>'));
 
 			$('.expandable-buffer').html(_this.html());
@@ -137,36 +130,25 @@ $(function () {
 	});
 
 
-	// let ellipsesText = "...";
-	// let expandText = "Show more";
-	// let collapseText = "Show less";
-	// $('.expandable-text').each(function() {
-	// 	let content = $(this).html();
-	// 	let collapseLimit = $(this).data('collapse-limit');
-	// 	if(content.length > collapseLimit) {
-	// 	let collapsedContent = content.substr(0, collapseLimit);
-	// 	let expandedContent = content.substr(collapseLimit-1, content.length - collapseLimit);
-	// 		$(this).empty();
-	// 		$(this).append($('<p />').addClass('collapsed-content').html(collapsedContent + '<span class="ellipses">...</span>'));
-	// 		// $(this).append($('<span />').addClass('ellipses').html(ellipsesText));
-	// 		$(this).append($('<p />').addClass('expanded-content').html($('.expandable-text').html()));
-	// 		// $(this).append($('<button />').addClass('trigger').html(expandText));
-	// 	}
-	// });
+	buttonExpand.on('click', function(){
 
-	$(".article-content-trigger").on('click', function(){
-		if($('.expanded-content').is(":visible")) {
-			$(this).removeClass('expanded');
-			$(this).find('span').text(expandText);
+		let _this = $(this),
+			_text = _this.siblings('.expandable-text');
+		if(!_this.hasClass('expanded')) {
+			_text.empty().append($('.expandable-buffer').html());
+			
+			_this.addClass('expanded');
+			_this.find('span').text(collapseText);
 		} else {
-			$(this).addClass('expanded');
-			$(this).find('span').text(collapseText);
+
+			let collapsedContent = _text.html().substr(0, maxLength);
+
+			_this.removeClass('expanded');
+			_this.find('span').text(expandText);
+
+			_text.html(collapsedContent + ellipsesText);
 		}
-
-		1										```  PPPPPNUUUUUU\]55444444444444444444444454X
-
-		// $(this).siblings('.expandable-text').find('.ellipses').toggle();
-		$(this).siblings('.expandable-text').find('.expanded-content').toggle();
+	
 	});
 
 	// 
