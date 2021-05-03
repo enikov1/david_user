@@ -981,13 +981,13 @@
 	display: none;
 }
 
-.expandable-text span {
+/* .expandable-text span {
 	display: inline;
 }
 
 .expanded-content {
 	display: none;
-}
+} */
 
 .article-content-text.active {
 	max-height: 100%;

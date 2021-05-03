@@ -22,3 +22,31 @@
 .right-16 {
 	right: 57px;
 }
+
+.article-content .article-content-trigger:not(.expanded) .icon-expand {
+	display: block;
+}
+
+.article-content .article-content-trigger.expanded .icon-expand {
+	display: none;
+}
+
+.article-content .article-content-trigger.expanded .icon-shrink {
+	display: block;
+}
+
+.article-content .article-content-trigger:not(.expanded) .icon-shrink {
+	display: none;
+}
+/* 
+.expandable-text span {
+	display: inline;
+}
+
+.expanded-content {
+	display: none;
+} */
+
+.article-content-text.active {
+	max-height: 100%;
+}
