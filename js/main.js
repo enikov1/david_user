@@ -21,7 +21,7 @@ $(function () {
 
 		$('[data-slider-pageCount]').attr('data-slider-pageCount', countSliderText);
 		$('[data-slider-pageCount]').html(countSliderText);
-	}
+	}	
 
 	let carousel_image = $('.carousel-items');
 
@@ -757,5 +757,25 @@ $(function () {
 			_parent = _this.parent();
 		_parent.toggleClass('accordion-open accordion-hide');
 		
+	});
+
+
+	// share
+
+	const shareData = {
+		title: 'MDN',
+		text: 'text text text texte ',
+		url: 'https://developer.mozilla.org',
+	}
+
+	const btn = document.querySelector('#open-share');
+
+	btn.addEventListener('click', async () => {
+		try {
+			await navigator.share(shareData)
+			// resultPara.textContent = 'MDN shared successfully'
+		} catch(err) {
+			// resultPara.textContent = 'Error: ' + err
+		}
 	});
 });
