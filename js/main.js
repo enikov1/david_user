@@ -185,33 +185,6 @@ $(function () {
 
 	// 
 
-	// Показываем блок Share
-
-	$('#open-share').on('click', function() {
-		$('#share-panel').toggle();
-
-		$('#modal-share').fadeIn();
-	});
-
-	$(window).on('resize', function() {
-		$('#modal-share').fadeOut();
-		$('#share-panel').fadeOut();
-	});
-
-	$('[data-target-copy-link="true"]').on('click', function() {
-		$('[data-trigger-copy-link="true"]').removeClass('hidden');
-
-		setTimeout(function() {
-			$('[data-trigger-copy-link="true"]').addClass('hidden');
-		}, 2000);
-	});
-
-	$('#modal-share button').on('click', function() {
-		$(this).parent('#modal-share').fadeOut();
-	});
-
-	// 
-
 	// Фильтр поиска
 
 	
@@ -765,7 +738,7 @@ $(function () {
 	const shareData = {
 		title: 'MDN',
 		text: 'text text text texte ',
-		url: 'https://developer.mozilla.org',
+		url: 'https://dev.org',
 	}
 
 	const btn = document.querySelector('#open-share');
@@ -773,9 +746,27 @@ $(function () {
 	btn.addEventListener('click', async () => {
 		try {
 			await navigator.share(shareData)
-			// resultPara.textContent = 'MDN shared successfully'
 		} catch(err) {
-			// resultPara.textContent = 'Error: ' + err
+			$('#share-panel').toggle();
+
+			$('#modal-share').fadeIn();
 		}
+	});
+
+	$(window).on('resize', function() {
+		$('#modal-share').fadeOut();
+		$('#share-panel').fadeOut();
+	});
+
+	$('[data-target-copy-link="true"]').on('click', function() {
+		$('[data-trigger-copy-link="true"]').removeClass('hidden');
+
+		setTimeout(function() {
+			$('[data-trigger-copy-link="true"]').addClass('hidden');
+		}, 2000);
+	});
+
+	$('#modal-share button').on('click', function() {
+		$(this).parent('#modal-share').fadeOut();
 	});
 });
