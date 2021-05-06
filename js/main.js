@@ -121,7 +121,7 @@ $(function () {
 			
 			buttonExpand.removeClass('hidden');
 
-			$('body').append($('<div class="expandable-buffer">'+'</div>'));
+			$('body').append($('<div class="expandable-buffer hidden">'+'</div>'));
 
 			$('.expandable-buffer').html(_this.html());
 

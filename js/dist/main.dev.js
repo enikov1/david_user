@@ -102,7 +102,7 @@ $(function () {
       var collapsedContent = _text.substr(0, maxLength);
 
       buttonExpand.removeClass('hidden');
-      $('body').append($('<div class="expandable-buffer">' + '</div>'));
+      $('body').append($('<div class="expandable-buffer hidden">' + '</div>'));
       $('.expandable-buffer').html(_this.html());
 
       _this.append("<p>").addClass('expanded-content').html(collapsedContent + ellipsesText);
@@ -146,25 +146,6 @@ $(function () {
     var count = $(this).val().length,
         button = $('#input-search-ref-sm');
     if (count > 3) button.removeClass('disabled').removeAttr('disabled').addClass('btn-blue');else button.addClass('disabled').attr('disabled').removeClass('btn-blue');
-  }); // 
-  // Показываем блок Share
-
-  $('#open-share').on('click', function () {
-    $('#share-panel').toggle();
-    $('#modal-share').fadeIn();
-  });
-  $(window).on('resize', function () {
-    $('#modal-share').fadeOut();
-    $('#share-panel').fadeOut();
-  });
-  $('[data-target-copy-link="true"]').on('click', function () {
-    $('[data-trigger-copy-link="true"]').removeClass('hidden');
-    setTimeout(function () {
-      $('[data-trigger-copy-link="true"]').addClass('hidden');
-    }, 2000);
-  });
-  $('#modal-share button').on('click', function () {
-    $(this).parent('#modal-share').fadeOut();
   }); // 
   // Фильтр поиска
 
@@ -603,5 +584,51 @@ $(function () {
         _parent = _this.parent();
 
     _parent.toggleClass('accordion-open accordion-hide');
+  }); // share
+
+  var shareData = {
+    title: 'MDN',
+    text: 'text text text texte ',
+    url: 'https://dev.org'
+  };
+  var btn = document.querySelector('#open-share');
+  btn.addEventListener('click', function _callee() {
+    return regeneratorRuntime.async(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            _context.prev = 0;
+            _context.next = 3;
+            return regeneratorRuntime.awrap(navigator.share(shareData));
+
+          case 3:
+            _context.next = 9;
+            break;
+
+          case 5:
+            _context.prev = 5;
+            _context.t0 = _context["catch"](0);
+            $('#share-panel').toggle();
+            $('#modal-share').fadeIn();
+
+          case 9:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, null, null, [[0, 5]]);
+  });
+  $(window).on('resize', function () {
+    $('#modal-share').fadeOut();
+    $('#share-panel').fadeOut();
+  });
+  $('[data-target-copy-link="true"]').on('click', function () {
+    $('[data-trigger-copy-link="true"]').removeClass('hidden');
+    setTimeout(function () {
+      $('[data-trigger-copy-link="true"]').addClass('hidden');
+    }, 2000);
+  });
+  $('#modal-share button').on('click', function () {
+    $(this).parent('#modal-share').fadeOut();
   });
 });
