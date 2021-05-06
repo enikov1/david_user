@@ -741,9 +741,9 @@ $(function () {
 		url: 'https://dev.org',
 	}
 
-	const btn = document.querySelector('#open-share');
+	const btn = $('#open-share');
 
-	btn.addEventListener('click', async () => {
+	btn.on('click', async function() {
 		try {
 			await navigator.share(shareData)
 		} catch(err) {

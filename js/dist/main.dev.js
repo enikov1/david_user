@@ -591,8 +591,8 @@ $(function () {
     text: 'text text text texte ',
     url: 'https://dev.org'
   };
-  var btn = document.querySelector('#open-share');
-  btn.addEventListener('click', function _callee() {
+  var btn = $('#open-share');
+  btn.on('click', function _callee() {
     return regeneratorRuntime.async(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
