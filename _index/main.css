@@ -136,6 +136,24 @@
 	border-bottom-right-radius: 0
 }
 
+.curve-line-bottom-sm {
+	-webkit-clip-path: ellipse(300% 100% at 50% 0);
+	clip-path: ellipse(300% 100% at 50% 0);
+	overflow: visible;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0
+}
+
+@media (max-width: 991px) {
+	.curve-line-bottom-ssm {
+		-webkit-clip-path: ellipse(200% 100% at 50% 0);
+		clip-path: ellipse(200% 100% at 50% 0);
+		overflow: visible;
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0
+	}
+}
+
 .main-bottom-image {
 	position: absolute;
 	bottom: 0;

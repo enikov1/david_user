@@ -6,9 +6,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Full text</title>
 
-	<link rel="stylesheet" href="_fullstory/libs/tailwind.css">
-	<link rel="stylesheet" href="_fullstory/inline.css">
-	<link rel="stylesheet" href="_fullstory/main.css">
+	<link rel="stylesheet" href="_fullstory_text/libs/tailwind.css">
+	<link rel="stylesheet" href="_fullstory_text/inline.css">
+	<link rel="stylesheet" href="_fullstory_text/main.css">
 
 	<link rel="stylesheet" href="css/libs/slick.css">
 	<link rel="stylesheet" href="css/libs/glightbox.min.css">
@@ -551,96 +551,13 @@
 
 	<main class="sm:mb-20">
 
-		<div class="md:sticky top-0 md:z-10 mb-4">
-			<div class="bg-white">
-				<div class="wrapper sm">
-					<div class="flex pl-5 h-12 md:pl-0">
-						<div class="flex items-center content-center">
-							<a href="#" class="inline-flex items-center">
-								<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none" class="mr-2 text-orange">
-									<path fill-rule="evenodd" clip-rule="evenodd"
-										d="M1.29551 10.5734C1.29551 15.7809 5.51697 20.0023 10.7244 20.0023C15.9319 20.0023 20.1533 15.7809 20.1533 10.5734C20.1533 5.366 15.9319 1.14453 10.7244 1.14453C5.51697 1.14453 1.29551 5.366 1.29551 10.5734ZM12.543 6.02541C12.1773 5.66048 11.5846 5.66048 11.2189 6.02541L7.33116 9.9118C6.96866 10.275 6.96848 10.8725 7.3325 11.236L11.2192 15.1215C11.5853 15.4867 12.1776 15.4855 12.5434 15.1216C12.9099 14.7562 12.9094 14.1626 12.5436 13.7971L9.31896 10.5736L12.543 7.35032C12.9095 6.9846 12.9086 6.391 12.543 6.02541Z"
-										fill="currentColor"></path>
-								</svg>
-								<span class="font-bold">More properties</span>
-							</a>
-						</div>
-						<div class="flex ml-auto border-gray-200 border-l">
-							<div class="flex relative">
-								<button class="w-12 md:w-auto md:px-4 flex items-center justify-center" type="button" id="open-share">
-									<svg width="23" height="17" fill="none" color="#FF8A00" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.006 1H19.49a2.505 2.505 0 012.502 2.51v10.58a2.508 2.508 0 01-2.506 2.506H4.006A2.508 2.508 0 011.5 14.09V3.506A2.508 2.508 0 014.006 1zm1.35 2.944a.667.667 0 00-.9.048.582.582 0 00.052.861l4.63 3.863-4.612 4.03a.584.584 0 00-.03.861l.002.002a.672.672 0 00.9.029l4.71-4.112 1.226 1.023a.663.663 0 00.849-.005l1.26-1.054 4.68 4.15a.658.658 0 00.44.165.661.661 0 00.462-.186.584.584 0 00-.024-.861l-4.598-4.075 4.576-3.83a.585.585 0 00.047-.861.67.67 0 00-.9-.045l-6.373 5.34-1.157-.965V8.32l-.034-.032a.91.91 0 00-.095-.077l-5.11-4.268z" fill="currentColor"/></svg>
-									<span class="font-bold align-middle ml-2 hidden md:inline-block">Share</span>
-								</button>
-
-								<div id="share-panel" class="share-panel md:rounded shadow z-10 hidden">
-									<div class="bg-white md:rounded p-5">
-										<strong class="block mt-2 md:mt-0">Share this property</strong>
-										<ul class="mt-4">
-											<li class="mt-2">
-												<a href="#" class="flex items-center w-full py-2">
-													<svg class="mr-2" width="23" height="17" fill="none" color="#FF8A00" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.006 1H19.49a2.505 2.505 0 012.502 2.51v10.58a2.508 2.508 0 01-2.506 2.506H4.006A2.508 2.508 0 011.5 14.09V3.506A2.508 2.508 0 014.006 1zm1.35 2.944a.667.667 0 00-.9.048.582.582 0 00.052.861l4.63 3.863-4.612 4.03a.584.584 0 00-.03.861l.002.002a.672.672 0 00.9.029l4.71-4.112 1.226 1.023a.663.663 0 00.849-.005l1.26-1.054 4.68 4.15a.658.658 0 00.44.165.661.661 0 00.462-.186.584.584 0 00-.024-.861l-4.598-4.075 4.576-3.83a.585.585 0 00.047-.861.67.67 0 00-.9-.045l-6.373 5.34-1.157-.965V8.32l-.034-.032a.91.91 0 00-.095-.077l-5.11-4.268z" fill="currentColor"/></svg>
-													<span class="font-bold">Email</span>
-												</a>
-											</li>
-											<li class="mt-2">
-												<div class="relative">
-													<div data-trigger-copy-link="true" class="absolute hidden bg-wafer rounded border border-gray-400 at-center-y -left-2 -right-2 flex items-center p-2">
-														<svg width="23" height="23" fill="none" class="mr-2 text-blue-500">
-															<circle cx="11.5" cy="11.5" r="10.5" stroke="currentColor" stroke-width="2"></circle>
-															<path fill-rule="evenodd" clip-rule="evenodd"
-																d="M5.45 11.943a.463.463 0 01-.142-.311c0-.089.046-.22.141-.309l.668-.62a.485.485 0 01.667 0l.047.046 2.622 2.608a.24.24 0 00.332 0l6.382-6.149h.05a.49.49 0 01.667 0l.665.62c.19.177.19.443 0 .62l-7.62 7.344a.45.45 0 01-.335.131.447.447 0 01-.332-.131l-3.717-3.718-.096-.131z"
-																fill="currentColor"></path>
-														</svg>
-														<span class="font-bold">Link copied</span>
-													</div>
-													<button class="flex items-center w-full py-2" type="button" data-target-copy-link="true">
-														<svg class="mr-2" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.424 8.575a5.133 5.133 0 00-7.259 0l-4.663 4.667A5.132 5.132 0 005.132 22a5.1 5.1 0 003.625-1.496l3.85-3.85a.366.366 0 00-.261-.626h-.147a6.17 6.17 0 01-2.346-.455.366.366 0 00-.4.08l-2.768 2.772a2.2 2.2 0 11-3.112-3.112l4.682-4.678a2.2 2.2 0 013.108 0 1.503 1.503 0 002.06 0c.25-.25.4-.58.426-.931a1.466 1.466 0 00-.425-1.13z" fill="#FF8A00"/><path d="M20.495 1.503a5.133 5.133 0 00-7.258 0L9.39 5.345a.367.367 0 00.268.627h.135c.804-.001 1.6.154 2.343.458a.367.367 0 00.4-.08l2.76-2.757a2.2 2.2 0 113.112 3.112l-3.438 3.435-.03.033-1.202 1.196a2.2 2.2 0 01-3.109 0 1.503 1.503 0 00-2.06 0c-.25.25-.402.584-.425.938-.027.42.128.831.425 1.13.424.425.92.773 1.466 1.026.077.036.154.066.231.099.077.033.158.058.235.088.077.029.157.055.234.077l.217.058c.146.037.293.066.443.092a5.1 5.1 0 00.547.051h.278l.22-.025c.08-.004.165-.022.26-.022h.125l.253-.037.117-.022.213-.044h.04a5.131 5.131 0 002.38-1.35l4.666-4.666a5.133 5.133 0 000-7.259z" fill="#FF8A00"/></svg>
-														<span class="font-bold">Copy link</span>
-													</button>
-												</div>
-											</li>
-											<li class="mt-2">
-												<button type="button" class="flex items-center w-full py-2">
-													<svg class="mr-2 w-6" xmlns="http://www.w3.org/2000/svg" width="32" height="32"><path fill="#334F8D" d="M19.254 2C15.312 2 13 4.082 13 8.826V13H8v5h5v12h5V18h4l1-5h-5V9.672C18 7.885 18.583 7 20.26 7H23V2.205C22.526 2.141 21.145 2 19.254 2z"/></svg>
-													<span class="font-bold">Facebook</span>
-												</button>
-											</li>
-											<li class="mt-2">
-												<button type="button" class="flex items-center w-full py-2">
-													<svg width="24" height="21" fill="none" class="mr-2 w-6 h-6 text-blue-500">
-														<path fill-rule="evenodd" clip-rule="evenodd"
-															d="M23.499 2.546c-.385.23-1.54.685-2.617.8.69-.4 1.713-1.715 1.965-2.758-.664.456-2.189 1.121-2.942 1.121 0 0 0 .003.002.004-.86-.967-2.068-1.57-3.41-1.57-2.603 0-4.715 2.273-4.715 5.078 0 .389.043.767.12 1.131-3.533-.098-7.663-2.004-9.99-5.268-1.428 2.666-.192 5.63 1.43 6.71-.553.046-1.578-.069-2.059-.573-.033 1.768.758 4.112 3.637 4.961-.555.323-1.535.23-1.962.16.15 1.495 2.092 3.448 4.214 3.448-.756.94-3.337 2.652-6.53 2.107 2.17 1.423 4.698 2.246 7.376 2.246 7.607 0 13.515-6.64 13.197-14.83 0-.01-.003-.02-.003-.028 0-.022.003-.045.003-.064 0-.025-.003-.05-.003-.077A8.487 8.487 0 0023.5 2.546z"
-															fill="currentColor"></path>
-													</svg>
-													<span class="font-bold">Twitter</span>
-												</button>
-											</li>
-											<li class="mt-2">
-												<a href="#" class="flex items-center w-full py-2">
-													<svg class="mr-2" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.003 0h-.006C5.38 0 0 5.382 0 12c0 2.625.846 5.058 2.284 7.034L.79 23.49l4.613-1.474A11.896 11.896 0 0012.003 24C18.619 24 24 18.616 24 12c0-6.617-5.38-12-11.997-12z" fill="#4CAF50"/><path d="M18.986 16.945c-.29.818-1.439 1.496-2.355 1.694-.627.133-1.446.24-4.203-.903C8.9 16.275 6.63 12.69 6.453 12.459c-.17-.233-1.425-1.898-1.425-3.62 0-1.722.875-2.56 1.227-2.92.29-.296.768-.43 1.227-.43.149 0 .282.007.402.013.353.015.53.036.762.592.29.698.995 2.42 1.079 2.597.085.177.17.417.05.65-.112.24-.21.346-.388.55-.177.204-.345.36-.522.579-.162.19-.345.394-.14.747.203.345.908 1.495 1.946 2.42 1.34 1.192 2.426 1.573 2.814 1.735.29.12.635.091.846-.134.269-.29.6-.77.938-1.242.24-.339.543-.38.86-.26.325.112 2.04.96 2.392 1.135.352.177.585.26.67.41.084.148.084.845-.205 1.664z" fill="#FAFAFA"/></svg>
-													<span class="font-bold">WhatsApp</span>
-												</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-
-							</div>
-							<div class="hidden sm:flex items-center pl-2 border-l border-gray-200">
-								<button data-trigger-make="true" class="btn btn-blue min-w-48" type="button">Make an enquiry</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
 		<!-- section article -->
 
-		<div class="wrapper sm md:px-5 md:flex md:flex-nowrap md:mt-4">
+		<div class="wrapper mt-16">
 			
+			<h1 class="font-hero text-0.5xl md:text-2xl font-bold mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam tempora nobis magni ab sint omnis blanditiis id doloribus delectus aut.</h1>
 
-			
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis repudiandae obcaecati dolor officiis mollitia soluta enim doloremque! Quidem, consectetur vitae et modi harum eveniet delectus vero sit aperiam expedita atque voluptatum, exercitationem iure quasi rerum corrupti. Repudiandae, doloremque impedit aspernatur tempore id modi laudantium quis expedita! Consequatur quod obcaecati cumque amet dolor eligendi distinctio laborum quidem similique aperiam nostrum deleniti iusto, repellat nobis, error sint aliquam doloribus illum ab vel? Aliquam voluptas veniam id, nemo in dicta vel? Quo facere temporibus nam nobis ipsum inventore illo quis eos eligendi, maxime ullam ut facilis nemo nihil doloremque totam vel iure reiciendis esse odio delectus maiores! Cum quas perferendis alias corporis distinctio. Necessitatibus perspiciatis eveniet architecto rerum corrupti a ducimus itaque, quis, cupiditate illum eius dolor vitae voluptatibus odit, quas eum possimus distinctio! Earum excepturi tempora beatae dolorem eveniet hic iure officiis animi incidunt commodi laudantium, quidem necessitatibus odit nemo quas minima fugit a reprehenderit nulla aperiam, itaque voluptate! Dolorem reprehenderit aspernatur sequi illo minus tempore, laudantium dignissimos ab libero est, soluta facere expedita. Enim ea distinctio tenetur animi ipsum labore rem odit quae ut alias eius, velit nesciunt ad minima consequuntur. Non labore illo id unde. Quod cum odit nobis maxime!</p>
 
 		</div>
 
