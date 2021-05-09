@@ -612,7 +612,7 @@
 			</div>
 
 		</section>
-
+		
 		<!-- section help items -->
 
 		<section class="bg-overlay py-10 curve-line-bottom-sm md:curve-line-bottom section-gray pt-20 -mt-10">
@@ -912,8 +912,8 @@
 
 		<!-- section tabs -->
 	
-		<section class="bg-white relative sect-after-bg ellipse-bg z-50">
-			<div class="m-auto max-w-6xl px-4 pb-4">
+		<section class="bg-white relative sect-after-bg">
+			<div class="m-auto max-w-6xl px-4">
 				<h3 class="font-hero font-bold text-xl">
 					All locations in Spain
 				</h3>
@@ -995,7 +995,7 @@
 								Navarre region</a>
 							</li>
 							<li>
-								<a class="animation-underline inline-block mb-2" href="#">
+								<a class="animation-underline inline-block" href="#">
 								Valencia region</a>
 							</li>
 						</ul>
@@ -1041,7 +1041,7 @@
 								Extremadura</a>
 							</li>
 							<li>
-								<a class="animation-underline inline-block mb-2" href="#">
+								<a class="animation-underline inline-block" href="#">
 								Galicia</a>
 							</li>
 						</ul>
@@ -1087,7 +1087,7 @@
 								Extremadura</a>
 							</li>
 							<li>
-								<a class="animation-underline inline-block mb-2" href="#">
+								<a class="animation-underline inline-block" href="#">
 								Galicia</a>
 							</li>
 						</ul>
@@ -1133,7 +1133,7 @@
 								Extremadura</a>
 							</li>
 							<li>
-								<a class="animation-underline inline-block mb-2" href="#">
+								<a class="animation-underline inline-block" href="#">
 								Galicia</a>
 							</li>
 						</ul>
@@ -1145,10 +1145,19 @@
 	
 		<!-- section feeback -->
 
-		<section class="flex justify-center h-full bg-blue-600 min-h-140 relative ellipse-bg -top-10">
+		<section class="flex justify-center h-full bg-blue-600 min-h-140 relative ellipse-bg">
 			<div class="flex h-auto w-full pt-8">
 				<div class="md:flex h-full w-full flex-wrap items-center m-auto max-w-lg md:px-5 px-0 relative md:max-w-4xl">
-					<div class="flex md:absolute md:h-auto md:mt-6 md:w-1/2 w-full" style="background-image: url(./img/svg/ellipse-sprinkle.svg), url(./img/svg/ellipse-wave.svg); background-repeat: no-repeat, no-repeat; background-position: 100% 90%, 25% 40%;">
+					<h3 class="font-hero font-semibold text-2xl text-white leading-tight w-full mt-10 mb-6 px-4 md:hidden text-center">Learn about moving to Spain with the free guide</h3>
+					<div class="flex md:absolute md:h-auto md:mt-6 md:w-1/2 w-full hidden md:block" style="background-image: url(./img/svg/ellipse-sprinkle.svg), url(./img/svg/ellipse-wave.svg); background-repeat: no-repeat, no-repeat; background-position: 100% 90%, 25% 40%;">
+
+						<div class="m-auto w-full max-w-128 min-w-64 md:min-h-96">
+							<img alt="" src="./img/guide-en.png" srcset="./img/guide-en.png 1x, ./img/guide-en-2x.png 2x" role="presentation" class="w-full">
+						</div>
+
+					</div>
+
+					<div class="flex md:absolute md:h-auto md:mt-6 md:w-1/2 w-full md:hidden" style="background-image: url(./img/svg/ellipse-sprinkle.svg); background-repeat: no-repeat; background-position: 100% 75%; background-size: 50% 50%">
 
 						<div class="m-auto w-full max-w-128 min-w-64 md:min-h-96">
 							<img alt="" src="./img/guide-en.png" srcset="./img/guide-en.png 1x, ./img/guide-en-2x.png 2x" role="presentation" class="w-full">
@@ -1157,6 +1166,7 @@
 					</div>
 					<div class="w-full md:w-2/5 ml-auto px-4 pb-10 md:p-0">
 						<h3 class="font-hero font-semibold text-2xl text-white hidden md:block">Learn about moving to Spain with the free guide</h3>
+						
 						<form class="mt-3">
 							<div class="block">
 								<input type="text" name="email" placeholder="Your email" class="form-input">
@@ -1177,6 +1187,24 @@
 				</div>
 			</div>
 		</section>
+
+
+		<svg width="0" height="0">
+		<defs>
+			<clipPath id="buyers-guide-clip-mobile" clipPathUnits="objectBoundingBox">
+			<path d="M0,0 C0,0,0.242,0.023,0.5,0.023 C0.758,0.023,1,0,1,0 V0.969 C1,0.969,0.801,0.997,0.5,1 C0.199,1,0,0.969,0,0.969 V0" />
+			</clipPath>
+		</defs>
+		</svg>
+
+		<svg width="0" height="0">
+		<defs>
+			<clipPath id="buyers-guide-clip" clipPathUnits="objectBoundingBox">
+			<path d="M0,0 C0,0,0.231,0.035,0.501,0.035 C0.771,0.035,1,0.001,1,0.001 L1,0.961 C1,0.961,0.812,0.995,0.501,1 C0.19,1,0,0.961,0,0.961 L0,0" />
+			</clipPath>
+		</defs>
+		</svg>
+
 	</main>
 
 	<!-- footer -->

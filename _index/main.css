@@ -459,10 +459,13 @@
 	.md\:col-count-4 {
 		column-count: 4
 	}
+	.ellipse-bg {
+		clip-path: url(#buyers-guide-clip);
+	}
 }
 
 .ellipse-bg {
-	clip-path: ellipse(150% 100% at 50% 0)
+	clip-path: url(#buyers-guide-clip-mobile);
 }
 
 .select {
