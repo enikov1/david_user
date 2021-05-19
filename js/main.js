@@ -464,12 +464,24 @@ $(function () {
 	// 
 
 	// Выбор языка
+	
 
-	$('.language-select').on('click', function() {
-		$('.language-panel').toggleClass('hidden');
+	const button_language_select = $('.language-select'),
+		  wrap_language_select = $('.language-panel');
+
+	button_language_select.on('click', function() {
+		wrap_language_select.toggleClass('hidden');
 	});
 
-	$('.language-panel').find('a').each(function() {
+	$(document).click(function (e) {
+		console.log(button_language_select.is(e.target));
+		if ( !button_language_select.is(e.target) && !wrap_language_select.is(e.target) && wrap_language_select.has(e.target).length === 0) {
+			wrap_language_select.addClass('hidden');
+			// button_language_select.removeClass('hidden');
+		};
+	});
+
+	wrap_language_select.find('a').each(function() {
 		$(this).on('click', function() {
 			$(this).addClass('active').siblings().removeClass('active');
 		});
@@ -525,6 +537,7 @@ $(function () {
 
 	form_validate.submit(function(e) {
 		e.preventDefault();
+
 	});
 
 	form_validate.each(function() {
@@ -542,7 +555,8 @@ $(function () {
 	});
 
 	if($('#form_validate_1').length) {
-		$('#form_validate_1').validate({
+		let form = $('#form_validate_1');
+		form.validate({
 			rules: {
 				name: {
 					required: true,
@@ -568,12 +582,19 @@ $(function () {
 			unhighlight: function(element, errorClass, validClass) {
 				$(element).prev('label').removeClass('error');
 				$(element).parent().closest('.telField').removeClass('error');
+			},
+
+			submitHandler: function() {
+				
+				form.parent('.form_option').fadeOut();
+				form.parent('.form_option').next('.form_success').fadeIn();
 			}
 		});
 	}
 	
 	if($('#form_validate_2').length) {
-		$('#form_validate_2').validate({
+		let form = $('#form_validate_2');
+		form.validate({
 			ignore: [],
 			rules: {
 				name: {
@@ -601,17 +622,24 @@ $(function () {
 			highlight: function(element, errorClass, validClass) {
 				$(element).prev('label').addClass('error');
 				$(element).parent().closest('.telField').addClass('error');
-				console.log(element);
+				// console.log(element);
 			},
 			unhighlight: function(element, errorClass, validClass) {
 				$(element).prev('label').removeClass('error');
 				$(element).parent().closest('.telField').removeClass('error');
+			},
+
+			submitHandler: function() {
+				
+				form.parent('.form_option').fadeOut();
+				form.parent('.form_option').next('.form_success').fadeIn();
 			}
 		});
 	}
 
 	if($('#form_validate_3').length) {
-		$('#form_validate_3').validate({
+		let form = $('#form_validate_3');
+		form.validate({
 			rules: {
 				name: {
 					required: true,
@@ -641,7 +669,8 @@ $(function () {
 		});
 	}
 	if($('#form_validate_4').length) {
-		$('#form_validate_4').validate({
+		let form = $('#form_validate_4');
+		form.validate({
 			rules: {
 				name: {
 					required: true,
@@ -667,6 +696,12 @@ $(function () {
 			unhighlight: function(element, errorClass, validClass) {
 				$(element).prev('label').removeClass('error');
 				$(element).parent().closest('.telField').removeClass('error');
+			},
+
+			submitHandler: function() {
+				
+				form.parent('.form_option').fadeOut();
+				form.parent('.form_option').next('.form_success').fadeIn();
 			}
 		});
 	}

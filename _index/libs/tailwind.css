@@ -554,7 +554,7 @@ img {
 }
 
 .min-h-140 {
-	min-height: 38rem
+	min-height: 35rem
 }
 
 .min-w-64 {
@@ -1128,4 +1128,8 @@ img {
 	.lg\:w-2\/3 {
 		width: 66.666667%
 	}
+}
+
+.mb-6 {
+    margin-bottom: 1.5rem;
 }

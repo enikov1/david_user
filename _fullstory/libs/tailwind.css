@@ -1494,3 +1494,7 @@
 	.z-1 {
 		z-index: 1
 	}
+
+.p-6 {
+	padding: 1.5rem;
+}

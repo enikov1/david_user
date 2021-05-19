@@ -431,6 +431,14 @@
 	background-color: #f5f5f9
 }
 
+.language-select {
+	cursor: pointer;
+}
+
+.language-select>div {
+	pointer-events: none;
+}
+
 .language-panel {
 	position: absolute;
 	background-color: #fff;

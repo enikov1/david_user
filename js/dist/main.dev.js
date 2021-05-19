@@ -345,10 +345,21 @@ $(function () {
   }); // 
   // Выбор языка
 
-  $('.language-select').on('click', function () {
-    $('.language-panel').toggleClass('hidden');
+  var button_language_select = $('.language-select'),
+      wrap_language_select = $('.language-panel');
+  button_language_select.on('click', function () {
+    wrap_language_select.toggleClass('hidden');
   });
-  $('.language-panel').find('a').each(function () {
+  $(document).click(function (e) {
+    console.log(button_language_select.is(e.target));
+
+    if (!button_language_select.is(e.target) && !wrap_language_select.is(e.target) && wrap_language_select.has(e.target).length === 0) {
+      wrap_language_select.addClass('hidden'); // button_language_select.removeClass('hidden');
+    }
+
+    ;
+  });
+  wrap_language_select.find('a').each(function () {
     $(this).on('click', function () {
       $(this).addClass('active').siblings().removeClass('active');
     });
@@ -405,7 +416,8 @@ $(function () {
   });
 
   if ($('#form_validate_1').length) {
-    $('#form_validate_1').validate({
+    var form = $('#form_validate_1');
+    form.validate({
       rules: {
         name: {
           required: true,
@@ -431,12 +443,18 @@ $(function () {
       unhighlight: function unhighlight(element, errorClass, validClass) {
         $(element).prev('label').removeClass('error');
         $(element).parent().closest('.telField').removeClass('error');
+      },
+      submitHandler: function submitHandler() {
+        form.parent('.form_option').fadeOut();
+        form.parent('.form_option').next('.form_success').fadeIn();
       }
     });
   }
 
   if ($('#form_validate_2').length) {
-    $('#form_validate_2').validate({
+    var _form = $('#form_validate_2');
+
+    _form.validate({
       ignore: [],
       rules: {
         name: {
@@ -463,18 +481,24 @@ $(function () {
       },
       highlight: function highlight(element, errorClass, validClass) {
         $(element).prev('label').addClass('error');
-        $(element).parent().closest('.telField').addClass('error');
-        console.log(element);
+        $(element).parent().closest('.telField').addClass('error'); // console.log(element);
       },
       unhighlight: function unhighlight(element, errorClass, validClass) {
         $(element).prev('label').removeClass('error');
         $(element).parent().closest('.telField').removeClass('error');
+      },
+      submitHandler: function submitHandler() {
+        _form.parent('.form_option').fadeOut();
+
+        _form.parent('.form_option').next('.form_success').fadeIn();
       }
     });
   }
 
   if ($('#form_validate_3').length) {
-    $('#form_validate_3').validate({
+    var _form2 = $('#form_validate_3');
+
+    _form2.validate({
       rules: {
         name: {
           required: true,
@@ -505,7 +529,9 @@ $(function () {
   }
 
   if ($('#form_validate_4').length) {
-    $('#form_validate_4').validate({
+    var _form3 = $('#form_validate_4');
+
+    _form3.validate({
       rules: {
         name: {
           required: true,
@@ -531,6 +557,11 @@ $(function () {
       unhighlight: function unhighlight(element, errorClass, validClass) {
         $(element).prev('label').removeClass('error');
         $(element).parent().closest('.telField').removeClass('error');
+      },
+      submitHandler: function submitHandler() {
+        _form3.parent('.form_option').fadeOut();
+
+        _form3.parent('.form_option').next('.form_success').fadeIn();
       }
     });
   }
