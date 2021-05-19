@@ -17,6 +17,28 @@ button {
 	cursor: pointer
 }
 
+h1,h2,h3,h4,h5,h6 {
+	font-family: Hero,
+	sans-serif;
+	margin-bottom: 1rem;
+	font-weight: 700;
+	font-size: 1.2rem;
+
+	
+}
+
+@media (min-width: 992px) {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-size: 1.5rem;
+		line-height: 2rem;
+	}
+}
+
 #modal-subs {
 	display: none;
 	z-index: 102
