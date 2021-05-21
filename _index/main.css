@@ -542,6 +542,13 @@
 	box-shadow: 0 1px 5px rgba(0, 0, 0, .15)
 }
 
+@media (max-width: 991px) {
+	.language-panel {
+		position: relative;
+		top: 0;
+	}
+}
+
 .language-panel .icon {
 	margin-right: 4px
 }
